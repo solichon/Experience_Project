@@ -10,7 +10,9 @@
 # require 'faker'
 
 Activity.destroy_all
+Client.destroy_all
 User.destroy_all
+
 
 puts "Creating users seeds"
 test = User.create!(
@@ -55,3 +57,14 @@ puts "Creating activities seeds on test user"
     )
   puts "done activity seed #{i}"
 end
+
+10.times do
+  client = Client.create!(
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      phone_number: Faker::PhoneNumber.phone_number,
+      email: Faker::Internet.email,
+    )
+end
+puts "done clients seeds"
+

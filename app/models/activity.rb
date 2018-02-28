@@ -1,6 +1,8 @@
 class Activity < ApplicationRecord
   belongs_to :user
 
+  mount_uploader :image, PhotoUploader
+
   monetize :adult_price_cents
   monetize :child_price_cents
 

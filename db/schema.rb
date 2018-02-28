@@ -15,6 +15,19 @@ ActiveRecord::Schema.define(version: 20180228112225) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "client_id"
+    t.integer "adults", default: 0
+    t.integer "children", default: 0
+    t.text "comments"
+    t.integer "total_price", default: 0
+    t.integer "status", default: 0
+    t.integer "channel", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_bookings_on_client_id"
+
   create_table "activities", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -72,6 +85,7 @@ ActiveRecord::Schema.define(version: 20180228112225) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "clients"
   add_foreign_key "activities", "users"
   add_foreign_key "timeslots", "activities"
 end

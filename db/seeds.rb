@@ -9,9 +9,12 @@
 # require 'open-uri'
 # require 'faker'
 
+Booking.destroy_all
+Timeslot.destroy_all
 Activity.destroy_all
 Client.destroy_all
 User.destroy_all
+
 
 
 puts "Creating users seeds"
@@ -56,7 +59,18 @@ puts "Creating activities seeds on test user"
     user: test
     )
   puts "done activity seed #{i}"
+
+  10.times do |i|
+    start_datetime = Faker::Time.forward(15, :day)
+    timeslot = Timeslot.create!(
+      start_datetime:start_datetime,
+      end_datetime: start_datetime + activity.duration_in_minutes * 60,
+      activity: activity
+      )
+  end
 end
+
+
 
 10.times do
   client = Client.create!(
@@ -67,4 +81,19 @@ end
     )
 end
 puts "done clients seeds"
+
+puts "Creating booking seeds"
+10.times do |i|
+  booking = Booking.create!(
+    client_id: Client.first.id,
+    adults: (1..2).to_a.sample.to_i,
+    children: (0..3).to_a.sample.to_i,
+    comments: Faker::Lorem.sentence,
+    total_price: (20..80).to_a.sample.to_i,
+    status: (0..1).to_a.sample.to_i,
+    channel: (0..4).to_a.sample.to_i,
+    )
+puts "done bookings seeds #{i}"
+end
+
 

@@ -6,11 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'open-uri'
+# require 'open-uri'
+# require 'faker'
 
 Booking.destroy_all
+Timeslot.destroy_all
+Activity.destroy_all
 Client.destroy_all
 User.destroy_all
+
 
 
 puts "Creating users seeds"
@@ -20,8 +24,8 @@ test = User.create!(
   first_name: "First",
   last_name: "Last",
   phone_number: "+33 6 11 22 33 44",
-  email: "test@test.com",
-  password: "azerty",
+  email: "user@example.com",
+  password: "password",
   website: "www.website.com"
   )
 puts "done user test"
@@ -40,6 +44,34 @@ puts "done user test"
   puts "done user seed #{i}"
 end
 
+puts "Creating activities seeds on test user"
+10.times do |i|
+  activity = Activity.create!(
+    title: Faker::Dessert.variety,
+    description: Faker::Lorem.sentence,
+    capacity: (1..20).to_a.sample.to_i,
+    duration_in_minutes: [30, 60, 120, 180, 240].sample.to_i,
+    meeting_point: Faker::Address.street_address,
+    active: (0..1).to_a.sample.to_i,
+    adult_price: (10..20).to_a.sample.to_i,
+    child_price:(0..10).to_a.sample.to_i,
+    image_url: Faker::LoremPixel.image("50x60", false, 'sports'),
+    user: test
+    )
+  puts "done activity seed #{i}"
+
+  10.times do |i|
+    start_datetime = Faker::Time.forward(15, :day)
+    timeslot = Timeslot.create!(
+      start_datetime:start_datetime,
+      end_datetime: start_datetime + activity.duration_in_minutes * 60,
+      activity: activity
+      )
+  end
+end
+
+
+
 10.times do
   client = Client.create!(
       first_name: Faker::Name.first_name,
@@ -49,7 +81,6 @@ end
     )
 end
 puts "done clients seeds"
-
 
 puts "Creating booking seeds"
 10.times do |i|
@@ -64,6 +95,5 @@ puts "Creating booking seeds"
     )
 puts "done bookings seeds #{i}"
 end
-
 
 

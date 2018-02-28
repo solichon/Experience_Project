@@ -22,6 +22,8 @@ gem 'annotate'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 
+gem 'money-rails'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

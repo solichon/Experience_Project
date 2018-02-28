@@ -8,6 +8,7 @@
 
 require 'open-uri'
 
+Booking.destroy_all
 Client.destroy_all
 User.destroy_all
 
@@ -48,4 +49,21 @@ end
     )
 end
 puts "done clients seeds"
+
+
+puts "Creating booking seeds"
+10.times do |i|
+  booking = Booking.create!(
+    client_id: Client.first.id,
+    adults: (1..2).to_a.sample.to_i,
+    children: (0..3).to_a.sample.to_i,
+    comments: Faker::Lorem.sentence,
+    total_price: (20..80).to_a.sample.to_i,
+    status: (0..1).to_a.sample.to_i,
+    channel: (0..4).to_a.sample.to_i,
+    )
+puts "done bookings seeds #{i}"
+end
+
+
 

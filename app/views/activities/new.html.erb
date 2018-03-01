@@ -1,5 +1,9 @@
 <h1>Je crée une nouvelle activité</h1>
 
+<% if @activity.errors.any? %>
+  <%= @activity.errors.full_messages %>
+<% end %>
+
 <%= simple_form_for @activity do |f| %>
   <%= f.error_notification %>
   <%= f.input :title, required: true, label: 'Titre' %>

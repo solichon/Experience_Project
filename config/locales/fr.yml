@@ -1,0 +1,13 @@
+fr:
+
+  pages:
+    home:
+      title: titre
+      activity:
+        zero: Pas d'activité
+        one: 1 activité
+        other: "%{count} activités"
+
+
+
+

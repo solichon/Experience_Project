@@ -24,6 +24,9 @@ gem 'carrierwave', '~> 0.11.2'
 
 gem 'money-rails'
 
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

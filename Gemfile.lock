@@ -70,6 +70,9 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.6.0)
+      devise (>= 4.4)
+    devise-i18n-views (0.3.7)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.7.0)
@@ -233,6 +236,8 @@ DEPENDENCIES
   carrierwave (~> 0.11.2)
   cloudinary
   devise
+  devise-i18n
+  devise-i18n-views
   faker
   figaro
   font-awesome-sass

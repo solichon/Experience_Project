@@ -9,4 +9,12 @@ class Timeslot < ApplicationRecord
   validates :end_datetime, presence: true
   validates :status, presence: true
 
+  def total_participants
+    counter = 0
+    self.bookings.each do |i|
+      counter += i.total_pax
+    end
+    return counter
+  end
+
 end

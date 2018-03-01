@@ -1,0 +1,20 @@
+<h1>Votre liste de timeslots (TBD: agenda de la semaine)</h1>
+
+<div>
+  <%= link_to "+ Activité", "new_activity_path"%> |
+  <%= link_to "+ Créneau", "new_timeslot_path"%> |
+  <%= link_to "+ Réservation", "new_booking_path"%>
+</div>
+
+<% @timeslots.each do |timeslot| %>
+  <div class="timeslot">
+    <div class='timeslot-body'>
+      <h3><%= timeslot.activity.title %> - <%= l timeslot.start_datetime, format: "%a %d %b" %></h3>
+      <p><%= timeslot.status %></p>
+      <p>Début: <%= l timeslot.start_datetime, format: "%H:%M" %></p>
+      <p>Fin: <%= l timeslot.end_datetime, format: "%H:%M" %></p>
+      <p>Capacité: <%= timeslot.activity.capacity %></p>
+      <p>Nombre participants: <%= timeslot.total_participants %></p>
+    </div>
+  </div>
+<% end %>

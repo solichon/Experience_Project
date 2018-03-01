@@ -1,0 +1,19 @@
+<h1>Votre liste de timeslots (TBD: agenda de la semaine)</h1>
+
+<div>
+  <%= link_to "+ Activité", "new_activity_path" #TO DO: delete quotes of path%>
+  <%= link_to "+ Créneau", "new_timeslot_path" #TO DO: delete quotes of path%>
+  <%= link_to "+ Réservation", "new_booking_path" #TO DO: delete quotes of path%>
+</div>
+
+<% @timeslots.each do |timeslot| %>
+  <div class="timeslot">
+    <div class='timeslot-body'>
+      <h3><%= timeslot.activity.title %> - <%= l timeslot.start_datetime, format: "%a %d %b" %></h3>
+      <p>Début: <%= l timeslot.start_datetime, format: "%H:%M" %></p>
+      <p>Fin: <%= l timeslot.end_datetime, format: "%H:%M" %></p>
+      <p>Capacité: <%= timeslot.activity.capacity %></p>
+      <p>Nombre participants: <%= timeslot.total_participants %></p>
+    </div>
+  </div>
+<% end %>

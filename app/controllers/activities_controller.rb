@@ -10,7 +10,7 @@ class ActivitiesController < ApplicationController
     @activity.user = current_user
     @activity.active = :active
     if @activity.save
-      redirect_to activities_path(params[:id])
+      redirect_to activities_path
     else
       render :new
     end

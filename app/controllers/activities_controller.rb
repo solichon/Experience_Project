@@ -8,7 +8,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.user = current_user
-    @activity.active = :active
+    @activity.status = :active
     if @activity.save
       redirect_to activities_path
     else

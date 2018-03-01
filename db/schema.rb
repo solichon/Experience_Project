@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228112225) do
+ActiveRecord::Schema.define(version: 20180228164027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,34 @@ ActiveRecord::Schema.define(version: 20180228112225) do
     t.integer "adult_price_cents", default: 0, null: false
     t.integer "child_price_cents", default: 0, null: false
     t.string "image_url"
+    t.integer "capacity", default: 1, null: false
+    t.integer "duration_in_minutes", default: 30, null: false
+    t.string "meeting_point"
+    t.integer "status", default: 0, null: false
+    t.integer "adult_price_cents", default: 0, null: false
+    t.integer "child_price_cents", default: 0, null: false
+    t.string "image"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "client_id"
+    t.integer "adults", default: 0
+    t.integer "children", default: 0
+    t.text "comments"
+    t.integer "total_price", default: 0
+    t.integer "status", default: 0
+    t.integer "channel", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_bookings_on_client_id"
+    t.integer "total_price_cents", default: 0, null: false
+    t.bigint "timeslot_id"
+    t.index ["client_id"], name: "index_bookings_on_client_id"
+    t.index ["timeslot_id"], name: "index_bookings_on_timeslot_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -59,6 +83,7 @@ ActiveRecord::Schema.define(version: 20180228112225) do
     t.bigint "activity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0, null: false
     t.index ["activity_id"], name: "index_timeslots_on_activity_id"
   end
 
@@ -87,5 +112,6 @@ ActiveRecord::Schema.define(version: 20180228112225) do
 
   add_foreign_key "activities", "users"
   add_foreign_key "bookings", "clients"
+  add_foreign_key "bookings", "timeslots"
   add_foreign_key "timeslots", "activities"
 end

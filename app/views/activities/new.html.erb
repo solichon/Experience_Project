@@ -1,0 +1,25 @@
+<h1>Je crée une nouvelle activité</h1>
+
+<!-- <% if @activity.errors.any? %> -->
+  <!-- <%= @activity.errors.full_messages %> -->
+<!-- <% end %> -->
+
+<%= simple_form_for @activity do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title, required: true, label: 'Titre' %>
+  <%= f.input :description, required: true %>
+  <%= f.input :duration_in_minutes, required: true, label: 'Durée (en minutes)' %>
+  <%= f.input :meeting_point, required: false, label: 'Lieu du RDV' %>
+  <%= f.input :capacity, required: true, label: 'Capacité (en personne)' %>
+  <%= f.input :adult_price_cents, required: true, label: 'Prix TTC adulte'%>
+  <%= f.input :child_price_cents, required: true, label: 'Prix TTC enfant'%>
+  <%= f.input :image, label: 'Photo' %>
+  <%= f.input :image_cache, as: :hidden %>
+  <%= f.submit "Valider", class: "btn btn-primary" %>
+<% end %>
+
+
+
+
+<!-- <h2>Plateformes</h2>
+Plateformes uniquement Fake / CSS -->

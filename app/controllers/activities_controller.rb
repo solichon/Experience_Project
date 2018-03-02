@@ -2,7 +2,6 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
-
   end
 
   def create
@@ -14,6 +13,10 @@ class ActivitiesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def index
+    @activities = Activity.all
   end
 
   private

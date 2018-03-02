@@ -6,4 +6,8 @@ class Client < ApplicationRecord
   validates :phone_number, presence: true
   validates :email, format: { with: /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/ }
 
+  def name
+    first_name.capitalize + " " + last_name.upcase
+  end
+
 end

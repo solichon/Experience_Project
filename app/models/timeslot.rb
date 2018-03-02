@@ -17,4 +17,7 @@ class Timeslot < ApplicationRecord
     return counter
   end
 
+  def name
+    start_datetime.strftime("%d %b %Hh%M")
+  end
 end

@@ -8,6 +8,10 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.total_price = @booking.timeslot.activity.adult_price * @booking.adults + @booking.timeslot.activity.child_price * @booking.children
+    if @timeslot.save
+      redirect_to timeslot_path
+    else
+      render :new
   end
 
   private

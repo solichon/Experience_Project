@@ -2,6 +2,7 @@
 
 <%= simple_form_for @booking do |f| %>
   <%= f.error_notification %>
+  <%= f.association :client %>
   <%= f.association :timeslot %>
   <%= f.input :adults %>
   <%= f.input :children %>

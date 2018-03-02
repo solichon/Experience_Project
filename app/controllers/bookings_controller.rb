@@ -7,18 +7,19 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.total_price = @booking.timeslot.activity.adult_price * @booking.adults + @booking.timeslot.activity.child_price * @booking.children
-    if @timeslot.save
-      redirect_to timeslot_path
+    if @booking.save
+      redirect_to timeslot_path(@booking.timeslot)
     else
       render :new
+    end
   end
 
   private
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def booking_params
-    params.require(:booking).permit(:adults, :children, :comments, :status, :total_price_cents)
-  #channel voluntary forgotten
+    par = params.require(:booking).permit(:adults, :children, :comments,
+     :status, :activity, :timeslot_id, :client_id)
+    par["status"] = par["status"].to_i
+    par
   end
 end

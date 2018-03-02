@@ -6,6 +6,8 @@ class Booking < ApplicationRecord
 
   enum status: [:booked, :confirmed, :paid, :cancelled]
 
+  before_validation :calculate_total_price
+
   validates :total_pax, numericality: { greater_than_or_equal_to: 1 }
   validates :adults, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :children, presence: true, numericality: { greater_than_or_equal_to: 0 }
@@ -17,6 +19,13 @@ class Booking < ApplicationRecord
     adults + children
   end
 
+
+  def calculate_total_price
+    adults_price = self.timeslot.activity.adult_price * self.adults
+    children_price = self.timeslot.activity.child_price * self.children
+    self.total_price = adults_price + children_price
+  end
+  
   def timeslot_not_overbooked
     capacity = timeslot.activity.capacity
     participants = timeslot.total_participants
@@ -24,7 +33,6 @@ class Booking < ApplicationRecord
       remaining = capacity - participants
       errors.add(:adults, "Il ne reste plus que #{remaining} place(s) au total")
       errors.add(:children, "Il ne reste plus que #{remaining} place(s) au total")
-    end
   end
 end
 

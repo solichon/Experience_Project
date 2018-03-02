@@ -53,7 +53,7 @@ puts "Creating activities seeds on test user"
   activity = Activity.create!(
     title: Faker::Dessert.variety,
     description: Faker::Lorem.sentence,
-    capacity: (1..20).to_a.sample.to_i,
+    capacity: (100..105).to_a.sample.to_i,
     duration_in_minutes: [30, 60, 120, 180, 240].sample.to_i,
     meeting_point: Faker::Address.street_address,
     status: (0..1).to_a.sample.to_i,
@@ -100,7 +100,6 @@ puts "Creating activities seeds on test user"
           comments: Faker::Lorem.sentence,
           total_price: (20..80).to_a.sample.to_i,
           status: (0..1).to_a.sample.to_i,
-          channel: (0..4).to_a.sample.to_i,
           )
       puts "done bookings seeds #{l + 1}"
       end

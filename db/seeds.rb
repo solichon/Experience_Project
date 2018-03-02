@@ -109,8 +109,12 @@ puts "Creating activities seeds on test user"
 end
 
 puts "#{User.count} users seeded"
+puts "First user id: #{User.first.id}"
 puts "#{Activity.count} activities seeded"
+puts "First activity id: #{Activity.first.id}"
 puts "#{Timeslot.count} timeslots seeded"
+puts "First timeslot id: #{Timeslot.first.id}"
 puts "#{Booking.count} bookings seeded"
+puts "First booking id: #{Booking.first.id}"
 puts "#{Client.count} clients seeded"
-
+puts "First client id: #{Client.first.id}"

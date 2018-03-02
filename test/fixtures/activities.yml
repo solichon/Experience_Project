@@ -7,9 +7,9 @@ one:
   duration_in_minutes: 1
   meeting_point: MyString
   status: 1
-  adult_price: 
-  child_price: 
-  image_url: MyString
+  adult_price:
+  child_price:
+  image: MyString
   user: one
 
 two:
@@ -19,7 +19,7 @@ two:
   duration_in_minutes: 1
   meeting_point: MyString
   status: 1
-  adult_price: 
-  child_price: 
-  image_url: MyString
+  adult_price:
+  child_price:
+  image: MyString
   user: two

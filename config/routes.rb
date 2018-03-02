@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root to: 'pages#home'
 
-  resources :timeslots, only: [ :index ]
-  resources :activities, only: [ :new, :create, :show ]
+  get "home", to: "pages#home"
+  get "about", to: "pages#about"
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :timeslots, only: [ :index, :show, :new, :create ]
+  resources :activities, only: [ :index, :show, :new, :create ]
 end

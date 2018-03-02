@@ -6,7 +6,7 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
+$body-bg:                 $white;
 $font-size-base: 18px;
 
 // Colors
@@ -16,6 +16,11 @@ $brand-success:   $green;
 // $brand-info:      $yellow;
 $brand-danger:    $red;
 // $brand-warning:   $orange;
+$brand-primary: $green;
+$brand-success: $red;
+$brand-info: $gray;
+$brand-warning: $red;
+$brand-danger: $red;
 
 // Buttons & inputs' radius
 $border-radius-base:  2px;

@@ -59,7 +59,7 @@ puts "Creating activities seeds on test user"
     status: (0..1).to_a.sample.to_i,
     adult_price: (10..20).to_a.sample.to_i,
     child_price:(0..10).to_a.sample.to_i,
-    image_url: Faker::LoremPixel.image("50x60", false, 'sports'),
+    image: Faker::LoremPixel.image("50x60", false, 'sports'),
     user: test
     )
   puts "done activity seed #{i + 1}"
@@ -109,8 +109,12 @@ puts "Creating activities seeds on test user"
 end
 
 puts "#{User.count} users seeded"
+puts "First user id: #{User.first.id}"
 puts "#{Activity.count} activities seeded"
+puts "First activity id: #{Activity.first.id}"
 puts "#{Timeslot.count} timeslots seeded"
+puts "First timeslot id: #{Timeslot.first.id}"
 puts "#{Booking.count} bookings seeded"
+puts "First booking id: #{Booking.first.id}"
 puts "#{Client.count} clients seeded"
-
+puts "First client id: #{Client.first.id}"

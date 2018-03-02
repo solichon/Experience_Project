@@ -9,12 +9,12 @@
 <% @timeslots.each do |timeslot| %>
   <div class="timeslot">
     <div class='timeslot-body'>
-      <h3><%= timeslot.activity.title %> - <%= l timeslot.start_datetime, format: "%a %d %b" %></h3>
+      <h3><%= timeslot.activity.title %> - <%= l timeslot.start_datetime, format: :custom %></h3>
       <p><%= timeslot.status %></p>
       <p>Début: <%= l timeslot.start_datetime, format: "%H:%M" %></p>
       <p>Fin: <%= l timeslot.end_datetime, format: "%H:%M" %></p>
       <p>Capacité: <%= timeslot.activity.capacity %></p>
-      <p>Nombre participants: <%= timeslot.total_participants %></p>
+      <p>Réservations: <%= timeslot.total_participants %></p>
     </div>
   </div>
 <% end %>

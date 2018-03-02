@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'timeslots#index'
-  
+  root to: 'pages#home'
+
   resources :timeslots, only: [ :index ]
   resources :activities, only: [ :new, :create, :show ]
 

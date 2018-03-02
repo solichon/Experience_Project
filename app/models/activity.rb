@@ -2,7 +2,7 @@ class Activity < ApplicationRecord
   belongs_to :user
   has_many :timeslots, dependent: :nullify # custom TBD for archive
 
-  # mount_uploader :image, PhotoUploader # to be uncommented when cloudinary key available
+  mount_uploader :image, PhotoUploader # to be uncommented when cloudinary key available
 
   monetize :adult_price_cents
   monetize :child_price_cents

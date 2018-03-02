@@ -1,0 +1,31 @@
+
+<!-- Taille image (uploader lors de la création) / Vérifier la size -->
+
+<h2>Détail de mon activité:</h2>
+
+<h3><%= @activity.title %></h3>
+<p><%= @activity.description %></p>
+<p><%= @activity.duration_in_minutes %></p>
+<p><%= @activity.meeting_point %></p>
+<p><%= @activity.capacity %></p>
+<p><%= @activity.adult_price_cents %></p>
+<p><%= @activity.child_price_cents %></p>
+
+<%= cl_image_tag @activity.image, height: 300, width: 400, crop: :fill %>
+
+<div class="flexbox">
+ <%= link_to "Nouveau créneau", "#", class: "btn btn-primary" %>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+

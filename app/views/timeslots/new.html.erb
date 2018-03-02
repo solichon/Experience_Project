@@ -1,0 +1,9 @@
+<h1>Je crée un nouveau créneau</h1>
+
+<%= simple_form_for @timeslot do |f| %>
+  <%= f.error_notification %>
+  <%= f.association :activity, required: true %>
+  <%= f.input :start_datetime, html5: true %>
+  <%= f.submit "Valider", class: "btn btn-primary" %>
+<% end %>
+

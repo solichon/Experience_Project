@@ -13,9 +13,5 @@ class Activity < ApplicationRecord
   validates :capacity, presence: true, numericality: true
   validates :duration_in_minutes, presence: true, numericality: true
   validates :status, presence: true
-
-  # def activity_list
-  #   @activity_list = Activity.all
-  # end
 end
 

@@ -50,7 +50,7 @@ end
 
 puts "Creating activities seeds on test user"
 10.times do |i|
-  activity = Activity.create!(
+  activity = Activity.new(
     title: Faker::Dessert.variety,
     description: Faker::Lorem.sentence,
     capacity: (1..20).to_a.sample.to_i,
@@ -59,9 +59,11 @@ puts "Creating activities seeds on test user"
     status: (0..1).to_a.sample.to_i,
     adult_price: (10..20).to_a.sample.to_i,
     child_price:(0..10).to_a.sample.to_i,
-    image: Faker::LoremPixel.image("50x60", false, 'sports'),
     user: test
     )
+    # activity.remote_image_url = Faker::LoremPixel.image("50x60", false, 'sports')
+    activity.remote_image_url = "http://estacionautica.com/wp-content/uploads/2016/07/caiac.jpg"
+    activity.save!
   puts "done activity seed #{i + 1}"
 
 # TIMESLOTS

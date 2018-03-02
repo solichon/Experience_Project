@@ -59,7 +59,7 @@ puts "Creating activities seeds on test user"
     status: (0..1).to_a.sample.to_i,
     adult_price: (10..20).to_a.sample.to_i,
     child_price:(0..10).to_a.sample.to_i,
-    image_url: Faker::LoremPixel.image("50x60", false, 'sports'),
+    image: Faker::LoremPixel.image("50x60", false, 'sports'),
     user: test
     )
   puts "done activity seed #{i + 1}"

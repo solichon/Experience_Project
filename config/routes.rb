@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   resources :timeslots, only: [ :index, :show, :new, :create ]
   resources :activities, only: [ :index, :show, :new, :create ]
+  resources :bookings, only: [ :new, :create ]
 end

@@ -14,3 +14,4 @@ class Activity < ApplicationRecord
   validates :duration_in_minutes, presence: true, numericality: true
   validates :status, presence: true
 end
+

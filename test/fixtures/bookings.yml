@@ -7,7 +7,6 @@ one:
   comments: MyText
   total_price: 1
   status: 1
-  channel: 1
 
 two:
   client: two
@@ -16,4 +15,3 @@ two:
   comments: MyText
   total_price: 1
   status: 1
-  channel: 1

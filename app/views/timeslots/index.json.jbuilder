@@ -1,4 +1,5 @@
 json.array! @timeslots do |timeslot|
+  json.id timeslot.id
   json.title timeslot.title_for_calendar
   json.start timeslot.start_datetime
   json.end timeslot.end_datetime

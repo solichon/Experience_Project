@@ -1,13 +1,26 @@
-<h1>Je crée un nouveau booking</h1>
 
-<%= simple_form_for [@timeslot, @booking] do |f| %>
+<h1>Je crée une nouvelle réservation</h1>
+<div>
+    <h3><%= @timeslot.activity.title %> - <%= l @timeslot.start_datetime, format: :custom %></h3>
+    <p><%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %></p>
+    <p>Début: <%= l @timeslot.start_datetime, format: :time %></p>
+    <p>Fin: <%= l @timeslot.end_datetime, format: :time %></p>
+    <p>Réservations: <%= @timeslot.total_participants %> / <%= @timeslot.activity.capacity %> </p>
+    <br>
+</div>
+<div>
+  <%= simple_form_for [@timeslot, @booking] do |f| %>
   <%= f.error_notification %>
   <%= f.association :client %>
-  <%= f.association :timeslot %>
   <%= f.input :adults %>
   <%= f.input :children %>
   <%= f.input :comments %>
   <%= f.input :status, collection: Booking::statuses  %>
   <%= f.input :channel_source, collection: Booking::channel_sources  %>
   <%= f.submit "Valider", class: "btn btn-primary" %>
-<% end %>
+  <% end %>
+</div>
+
+
+
+

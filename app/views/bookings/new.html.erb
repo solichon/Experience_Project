@@ -1,6 +1,6 @@
 <h1>Je crée un nouveau booking</h1>
 
-<%= simple_form_for @booking do |f| %>
+<%= simple_form_for [@timeslot, @booking] do |f| %>
   <%= f.error_notification %>
   <%= f.association :client %>
   <%= f.association :timeslot %>
@@ -8,5 +8,6 @@
   <%= f.input :children %>
   <%= f.input :comments %>
   <%= f.input :status, collection: Booking::statuses  %>
+  <%= f.input :channel_source, collection: Booking::channel_sources  %>
   <%= f.submit "Valider", class: "btn btn-primary" %>
 <% end %>

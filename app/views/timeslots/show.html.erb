@@ -2,16 +2,16 @@
 
 <div>
     <h3><%= @timeslot.activity.title %> - <%= l @timeslot.start_datetime, format: :custom %></h3>
-    <p><%= @timeslot.status %></p>
-    <p>Début: <%= l @timeslot.start_datetime, format: "%H:%M" %></p>
-    <p>Fin: <%= l @timeslot.end_datetime, format: "%H:%M" %></p>
+    <p><%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %></p>
+    <p>Début: <%= l @timeslot.start_datetime, format: :time %></p>
+    <p>Fin: <%= l @timeslot.end_datetime, format: :time %></p>
     <p>Réservations: <%= @timeslot.total_participants %> / <%= @timeslot.activity.capacity %> </p>
     <br>
 </div>
 
 <% @timeslot.bookings.each do |booking| %>
   <div>
-      <p><%= booking.status %> |
+      <p><%= t("activerecord.attributes.booking.statuses.#{booking.status}") %> |
       <%= booking.client.first_name %> |
       <%= booking.client.last_name %> |
       <%= booking.client.phone_number %> |

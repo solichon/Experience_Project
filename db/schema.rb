@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180302150117) do
+ActiveRecord::Schema.define(version: 20180305101346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20180302150117) do
     t.integer "capacity", default: 1, null: false
     t.integer "duration_in_minutes", default: 30, null: false
     t.string "meeting_point"
-    t.integer "status", default: 0, null: false
+    t.integer "status"
     t.integer "adult_price_cents", default: 0, null: false
     t.integer "child_price_cents", default: 0, null: false
     t.string "image"
@@ -36,11 +36,12 @@ ActiveRecord::Schema.define(version: 20180302150117) do
     t.integer "adults", default: 0
     t.integer "children", default: 0
     t.text "comments"
-    t.integer "status", default: 0
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "total_price_cents", default: 0, null: false
     t.bigint "timeslot_id"
+    t.integer "channel_source"
     t.index ["client_id"], name: "index_bookings_on_client_id"
     t.index ["timeslot_id"], name: "index_bookings_on_timeslot_id"
   end
@@ -60,7 +61,7 @@ ActiveRecord::Schema.define(version: 20180302150117) do
     t.bigint "activity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status", default: 0, null: false
+    t.integer "status"
     t.index ["activity_id"], name: "index_timeslots_on_activity_id"
   end
 

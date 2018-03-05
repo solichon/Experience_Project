@@ -5,6 +5,8 @@ class Booking < ApplicationRecord
   monetize :total_price_cents
 
   enum status: [:booked, :confirmed, :paid, :cancelled]
+  enum channel_source: [:direct, :gege_online, :gege_call_center, :airbnb,
+    :tripadvisor, :booking_com]
 
   before_validation :calculate_total_price
 
@@ -13,6 +15,7 @@ class Booking < ApplicationRecord
   validates :children, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :total_price, presence: true, numericality: true
   validates :status, presence: true
+  validates :channel_source, presence: true
   validate :timeslot_not_overbooked
 
   def total_pax

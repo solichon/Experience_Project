@@ -1,7 +1,7 @@
 <h1>Votre créneau:</h1>
 
 <div>
-    <h3><%= @timeslot.activity.title %> - <%= l @timeslot.start_datetime, format: :custom %></h3>
+    <h3><%= link_to "#{@timeslot.activity.title}", activity_path(@timeslot.activity) %> - <%= l @timeslot.start_datetime, format: :custom %></h3>
     <p><%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %></p>
     <p>Début: <%= l @timeslot.start_datetime, format: :time %></p>
     <p>Fin: <%= l @timeslot.end_datetime, format: :time %></p>

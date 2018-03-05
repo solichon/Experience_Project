@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "logo_gege.png", height: 60 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -48,9 +48,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>

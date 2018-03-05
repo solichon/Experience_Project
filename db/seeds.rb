@@ -74,7 +74,8 @@ puts "Creating activities seeds on test user"
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + activity.duration_in_minutes * 60,
-      activity: activity
+      activity: activity,
+      status: (0..1).to_a.sample.to_i
       )
     puts "done timeslot seed #{j + 1}"
 
@@ -101,7 +102,8 @@ puts "Creating activities seeds on test user"
           children: (0..3).to_a.sample.to_i,
           comments: Faker::Lorem.sentence,
           total_price: (20..80).to_a.sample.to_i,
-          status: (0..1).to_a.sample.to_i,
+          channel_source: (0..5).to_a.sample.to_i,
+          status: (0..1).to_a.sample.to_i
           )
       puts "done bookings seeds #{l + 1}"
       end

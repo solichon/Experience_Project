@@ -1,12 +1,18 @@
 class TimeslotsController < ApplicationController
   def index
     @timeslots = Timeslot.all
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
-  
+
+
+
   def show
     @timeslot = Timeslot.find(params[:id])
   end
-  
+
   def new
     @timeslot = Timeslot.new
   end

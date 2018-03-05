@@ -20,4 +20,10 @@ class Timeslot < ApplicationRecord
   def name
     start_datetime.strftime("%d %b %Hh%M")
   end
+
+
+  def title_for_calendar
+    "#{activity.title} (#{total_participants}/#{activity.capacity})"
+  end
+
 end

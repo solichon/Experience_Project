@@ -24,16 +24,23 @@ fr:
           archived: Archivée
       timeslot:
         statuses:
-          empty: 'Vide'
-          partial: 'Disponibilités'
-          complete: 'Complet'
-          cancelled: 'Annulé'
+          empty: Vide
+          partial: Disponibilités
+          complete: Complet
+          cancelled: Annulé
       booking:
         statuses:
-          booked: 'Réservé'
-          confirmed: 'Confirmé'
-          paid: 'Payé'
-          cancelled: 'Annulé'
+          booked: Réservé
+          confirmed: Confirmé
+          paid: Payé
+          cancelled: Annulé
+        channel_sources:
+          direct: Directe
+          gege_online: Via mon Site
+          gege_call_center: Via le call center
+          airbnb: Airbnb
+          tripadvisor: Tripadvisor
+          booking_com: Booking.com
 
 
 

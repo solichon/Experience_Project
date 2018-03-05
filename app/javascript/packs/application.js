@@ -28,7 +28,6 @@ $(document).ready(function() {
     allDaySlot: false,
     nowIndicator: true,
     // put your options and callbacks here
-
     customButtons: {
       addActivity: {
         text: '+ Activité',
@@ -48,9 +47,23 @@ $(document).ready(function() {
           window.location.replace('/bookings/new');
         }
       }
-    }
+    },
+    // eventClick: function(calEvent, jsEvent, view) {
+    //   debugger;
+    //   alert('clickend');
+    eventRender: function(eventObj, $el) {
+      // console.log('eventObj:', eventObj);
+      debugger
+      $el.popover({
+        html:true,
+        title: eventObj.title,
+        content: `<a href="/timeslots/${eventObj.id}/bookings/new">Ajouter Réservation</a><a href="/timeslots/${eventObj.id}">Détails</a>` ,
+        trigger: 'click',
+        placement: 'top',
+        container: 'body'
+      })
+    },
+    events: '/timeslots'
 
   })
-
-
 });

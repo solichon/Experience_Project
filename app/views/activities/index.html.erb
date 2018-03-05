@@ -7,7 +7,7 @@
             <%= link_to image_tag(activity.image), activity_path(activity) %>
             <div class="activity-body">
               <h2><%= link_to activity.title, activity_path(activity) %><h2>
-              <h3><%= activity.status %></h3>
+              <h3><%= t("activerecord.attributes.activity.statuses.#{activity.status}") %></h3>
             </div>
           </div>
       </div>

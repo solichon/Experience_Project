@@ -1,17 +1,26 @@
 
 <!-- Taille image (uploader lors de la création) / Vérifier la size -->
+ <div class="container">
 
-<h2>Détail de mon activité:</h2>
+<div class="well well-sm">
+  <div class="row d-none">
+    <div class="col-xs-8">
+    <h3>Détail de mon activité :</h3>
+  </div>
+  <div class="col-xs-6">
+<h4><strong> Mon activité :</strong> <%= @activity.title %></h4>
+<p><strong> Description :</strong><%= @activity.description %></p>
+<p><strong> Durée :</strong> <%= @activity.duration_in_minutes %></p>
+<p><strong> Localisation :</strong> <%= @activity.meeting_point %></p>
+<p><strong> Capacité maximale :</strong> <%= @activity.capacity %></p>
+<p><strong> Prix adulte :</strong> <%= @activity.adult_price_cents %></p>
+<p> <strong> Prix enfant :</strong> <%= @activity.child_price_cents %></p>
 
-<h3><%= @activity.title %></h3>
-<p><%= @activity.description %></p>
-<p><%= @activity.duration_in_minutes %></p>
-<p><%= @activity.meeting_point %></p>
-<p><%= @activity.capacity %></p>
-<p><%= @activity.adult_price_cents %></p>
-<p><%= @activity.child_price_cents %></p>
+<div class="row">
+<%= cl_image_tag @activity.image, class: "card", height: 200, width: 300, crop: :fill %>
+  </div>
+<br>
 
-<%= cl_image_tag @activity.image, height: 300, width: 400, crop: :fill %>
 
 <div class="flexbox">
  <%= link_to "Nouveau créneau", "#", class: "btn btn-primary" %>

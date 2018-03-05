@@ -1,16 +1,4 @@
 fr:
-
-  pages:
-    home:
-      title: titre
-      activity:
-        zero: Pas d'activité
-        one: 1 activité
-        other: "%{count} activités"
-
-
-
-
   activerecord:
     errors:
       messages:
@@ -224,4 +212,5 @@ fr:
       long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
       custom: "%a %d %b"
+      time: "%H:%M"
     pm: pm

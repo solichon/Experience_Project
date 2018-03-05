@@ -1,18 +1,39 @@
-activerecord:
-  model:
-    activity: activité
-    user: Utilisateur
-  attributes:
-    activity:
-      create_new_activity: Je crée une nouvelle activité
-      title: Titre
-      description: description
-      duration_in_minutes: Durée (en minutes)
-      meeting_point: Lieu du RDV
-      capacity: Capacité (en minutes)
-      adult_price_cents: Prix TTC adulte
-      child_price_cents: Prix TTC enfant
-      image: Photo
-      submit: Valider
-      plateforms: Plateformes
+fr:
+  activerecord:
+    model:
+      activity: Activité
+      user: Utilisateur
+      timeslot: Créneau
+      booking: Réservation
+    attributes:
+      activity:
+        create_new_activity: Je crée une nouvelle activité
+        title: Titre
+        description: Description
+        duration_in_minutes: Durée (en minutes)
+        meeting_point: Lieu du RDV
+        capacity: Capacité (en minutes)
+        adult_price_cents: Prix TTC adulte
+        child_price_cents: Prix TTC enfant
+        image: Photo
+        submit: Valider
+        plateforms: Plateformes
+        statuses:
+          active: Active
+          inactive: Désactivée
+          archived: Archivée
+      timeslot:
+        statuses:
+          empty: 'Vide'
+          partial: 'Disponibilités'
+          complete: 'Complet'
+          cancelled: 'Annulé'
+      booking:
+        statuses:
+          booked: 'Réservé'
+          confirmed: 'Confirmé'
+          paid: 'Payé'
+          cancelled: 'Annulé'
+
+
 

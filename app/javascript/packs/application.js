@@ -48,9 +48,7 @@ $(document).ready(function() {
           window.location.replace('/bookings/new');
         }
       }
-    }
-
+    },
+    events: '/timeslots'
   })
-
-
 });

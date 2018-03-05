@@ -1,9 +1,13 @@
-<h1>Je crée une nouvelle activité</h1>
 
 <%# if @activity.errors.any? %>
 <%# @activity.errors.full_messages %>
 <%# end %>
 
+
+<div class="row">
+  <div class="col-xs-5 col-xs-offset-1">
+<h1>Je crée une nouvelle activité</h1>
+<br>
 <%= simple_form_for @activity do |f| %>
   <%= f.error_notification %>
   <%= f.input :title, required: true, label: 'Titre' %>
@@ -17,9 +21,8 @@
   <%= f.input :image_cache, as: :hidden %>
   <%= f.submit "Valider", class: "btn btn-primary" %>
 <% end %>
-
-
-
+  </div>
+</div>
 
 <!-- <h2>Plateformes</h2>
 Plateformes uniquement Fake / CSS -->

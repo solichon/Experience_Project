@@ -2,37 +2,65 @@
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
     <form action="#">
-      <h1 class="text-center">J’affiche le détail de mon activité</h1>
+    <h1 class="text-center activity">Votre activité <strong><%= @activity.title %> en détail</strong></h1>
     </form>
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12 col-md-4 col-md-offset-2">
-        <h4><strong> Mon activité :</strong> <%= @activity.title %></h4>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-md-4 col-md-offset-2">
-        <p><strong> Description :</strong><%= @activity.description %></p>
-        <p><strong> Durée (min) :</strong> <%= @activity.duration_in_minutes %></p>
-        <p><strong> Localisation :</strong> <%= @activity.meeting_point %></p>
-        <p><strong> Capacité maximale :</strong> <%= @activity.capacity %></p>
-        <p><strong> Prix adulte :</strong> <%= @activity.adult_price_cents %></p>
-        <p> <strong> Prix enfant :</strong> <%= @activity.child_price_cents %></p>
+  <div class="col-xs-12 col-md-5 col-md-offset-1">
+    <ul class="list-group">
+       <li class="list-group-item"> <h5 class="detail-activity"><strong><span class="glyphicon glyphicon-search"></span> <strong> Description </strong></h5><%= @activity.description %></li>
+        <li class="list-group-item"><h5 class="detail-activity"><span class="glyphicon glyphicon-dashboard"></span> <strong> Durée </strong></h5><%= @activity.duration_in_minutes %> minutes</li>
+        <li class="list-group-item"><h5 class="detail-activity"><strong><span class="glyphicon glyphicon-map-marker"></span> Localisation </strong></h5><%= @activity.meeting_point %></li>
+        <li class="list-group-item"><h5 class="detail-activity"><strong> <span class="glyphicon glyphicon-user"></span> Capacité maximale </strong></h5><%= @activity.capacity %> personnes</li>
+        <li class="list-group-item"><h5 class="detail-activity"><strong> <span class="glyphicon glyphicon-eur"></span> Prix adulte </strong></h5><%= @activity.adult_price_cents %> €</li>
+        <li class="list-group-item"><h5 class="detail-activity"><strong><span class="glyphicon glyphicon-eur"></span>  Prix enfant </strong></h5><%= @activity.child_price_cents %> €</li>
+    </ul>
   </div>
   <div class="col-xs-12 col-md-4 col-md-offset-1">
-    <div class="row text-center">
+  <div class="row text-center">
       <%= cl_image_tag @activity.image, class: "card", height: 200, width: 300, crop: :fill %>
-    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="flex-container">
     <div class="row text-center">
-      <br>
-      <%= link_to "Nouveau créneau", href="/timeslots/new", class: "btn btn-primary" %>
+     <div>
+     <%= image_tag "log booking pour activity show.png", height: 40%>
+    <div class="btn-group btn-toggle">
+    <button class="btn btn-xs btn-default">ON</button>
+    <button class="btn btn-xs btn-default">OFF</button>
     </div>
   </div>
+
+<div>
+  <%= image_tag "airbnb logo show acitivity.png", height: 30%>
+  <div class="btn-group btn-toggle">
+    <button class="btn btn-xs btn-default">ON</button>
+    <button class="btn btn-xs btn-default">OFF</button>
+    </div>
+    <div>
+  <%= image_tag "tripadvisor show activity.png", height: 33%>
+  <div class="btn-group btn-toggle">
+    <button class="btn btn-xs btn-default">ON</button>
+    <button class="btn btn-xs btn-default">OFF</button>
+    </div>
+
+  <div class="row text-center">
+      <br>
+      <%= link_to "Nouveau créneau", href="/timeslots/new", class: "btn btn-primary" %>
+      <br>
+      <br>
+      <br>
+  </div>
 </div>
-
-
-
+</div>
+</div>
+</div>
+</div>
+  </div>
 
 
 

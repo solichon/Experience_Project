@@ -7,14 +7,17 @@
 </div>
 <div class="row">
     <% @activities.each do |activity| %>
-      <div class="col-sm-6 col-md-4">
-          <div class="activity">
-            <%= link_to image_tag(activity.image), activity_path(activity) %>
-            <div class="activity-body">
-              <h2><%= link_to activity.title, activity_path(activity) %><h2>
-              <h3><%= t("activerecord.attributes.activity.statuses.#{activity.status}") %></h3>
-            </div>
-          </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(activity.image) %>);">
+        <div class="card-category"></div>
+        <div class="card-description">
+          <h2><%= activity.title %></h2>
+          <p><%= t("activerecord.attributes.activity.statuses.#{activity.status}") %></p>
+        </div>
+          <%=  link_to activity.title, activity_path(activity), class: "card-link" %>
       </div>
+    </div>
     <% end %>
 </div>
+
+

@@ -23,7 +23,7 @@ class Timeslot < ApplicationRecord
 
 
   def title_for_calendar
-    "#{activity.title} (#{total_participants}/#{activity.capacity})"
+    "#{activity.title}\n👤#{total_participants}/#{activity.capacity}"
   end
 
 end

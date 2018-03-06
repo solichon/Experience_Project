@@ -3,17 +3,22 @@ import $ from 'jquery';
 
 import 'fullcalendar';
 import 'fullcalendar/dist/fullcalendar.css';
+import 'fullcalendar/dist/locale/fr.js'
+
+// import 'fullcalendar/lang/fr.js';
+
 
 $(document).ready(function() {
 
   // page is now ready, initialize the calendar...
 
   $('#calendar').fullCalendar({
+    locale:"fr-fr",
     defaultView: 'agendaWeek',
     themeSystem: 'bootstrap3',
     header: {
       left: 'prev,next',
-      center: 'addActivity,addTimeslot,addBooking',
+      center: 'title',
       right: 'month,agendaWeek,agendaDay,'
     },
     footer: {
@@ -21,39 +26,25 @@ $(document).ready(function() {
       weekNumbers: true,
       eventLimit: true, // allow "more" link when too many events
     },
-    contentHeight: 600,  //size height
-    aspectRatio: 1.5, //ration height vs. width (don't work)
+    contentHeight: 588,  //size height
+    aspectRatio: 1, //ration height vs. width (don't work)
     minTime: '10:00:00',
     maxTime: '20:00:00',
     allDaySlot: false,
     nowIndicator: true,
+    displayEventTime: false,
     // put your options and callbacks here
-    customButtons: {
-      addActivity: {
-        text: '+ Activité',
-        click: function() {
-          window.location.replace('/activities/new');
-        }
-      },
-      addTimeslot: {
-        text: '+ Créneau',
-        click: function() {
-          window.location.replace('/timeslots/new');
-        }
-      },
-      addBooking: {
-        text: '+ Réservation',
-        click: function() {
-          window.location.replace('/bookings/new');
-        }
-      }
-    },
+    titleFormat: '[Gégé, quel est mon planning?]',
+    // customButtons: {
+    //   addTitle: {
+    //     text: 'Gégé, quel est mon planning?'
+    //   }
+    // },
     // eventClick: function(calEvent, jsEvent, view) {
     //   debugger;
     //   alert('clickend');
     eventRender: function(eventObj, $el) {
       // console.log('eventObj:', eventObj);
-      debugger
       $el.popover({
         html:true,
         title: eventObj.title,
@@ -63,7 +54,10 @@ $(document).ready(function() {
         container: 'body'
       })
     },
-    events: '/timeslots'
+    events: '/timeslots',
+    eventBackgroundColor: '#FFFFFF'
+
 
   })
 });
+

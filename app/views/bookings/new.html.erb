@@ -1,24 +1,56 @@
-
-<h1>Je crée une nouvelle réservation</h1>
-<div>
-    <h3><%= @timeslot.activity.title %> - <%= l @timeslot.start_datetime, format: :custom %></h3>
-    <p><%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %></p>
-    <p>Début: <%= l @timeslot.start_datetime, format: :time %></p>
-    <p>Fin: <%= l @timeslot.end_datetime, format: :time %></p>
-    <p>Réservations: <%= @timeslot.total_participants %> / <%= @timeslot.activity.capacity %> </p>
-    <br>
-</div>
-<div>
-  <%= simple_form_for [@timeslot, @booking] do |f| %>
-  <%= f.error_notification %>
-  <%= f.association :client %>
-  <%= f.input :adults %>
-  <%= f.input :children %>
-  <%= f.input :comments %>
-  <%= f.input :status, collection: Booking::statuses  %>
-  <%= f.input :channel_source, collection: Booking::channel_sources  %>
-  <%= f.submit "Valider", class: "btn btn-primary" %>
-  <% end %>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+    <form action="#">
+      <h1 class="text-center">Je crée une nouvelle réservation</h1>
+      <div class="row">
+        <h3><%= @timeslot.activity.title %> - <%= l @timeslot.start_datetime, format: :custom %></h3>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <p>Réservations: <%= @timeslot.total_participants %> / <%= @timeslot.activity.capacity %> </p>
+        </div>
+        <div class="col-xs-6">
+          <p>Début: <%= l @timeslot.start_datetime, format: :time %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <p class="label label-primary"><%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %></p>
+        </div>
+        <div class="col-xs-6">
+          <p>Fin: <%= l @timeslot.end_datetime, format: :time %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <%= simple_form_for [@timeslot, @booking] do |f| %>
+            <%= f.error_notification %>
+            <%= f.association :client %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <%= f.input :adults %>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <%= f.input :children %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+            <%= f.input :comments %>
+            <%= f.input :status, collection: Booking::statuses  %>
+            <%= f.input :channel_source, collection: Booking::channel_sources  %>
+            <%= f.submit "Valider", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 

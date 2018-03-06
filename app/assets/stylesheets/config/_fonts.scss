@@ -4,6 +4,11 @@
 $body-font: "Roboto", "Open Sans", "sans-serif";
 $headers-font: "Roboto", "Open Sans", "sans-serif";
 
+body {
+  margin: 0;
+  margin-top: 50px;
+}
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

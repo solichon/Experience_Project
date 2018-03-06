@@ -24,8 +24,8 @@ fr:
           archived: Archivée
       timeslot:
         statuses:
-          empty: Vide
-          partial: Disponibilités
+          empty: Aucune Réservation
+          partial: Places disponibles
           complete: Complet
           cancelled: Annulé
       booking:

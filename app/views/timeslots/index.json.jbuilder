@@ -1,9 +1,18 @@
 json.array! @timeslots do |timeslot|
   json.id timeslot.id
   json.title timeslot.title_for_calendar
+  json.capacity timeslot.capacity_for_calendar
   json.start timeslot.start_datetime
   json.end timeslot.end_datetime
-  json.borderColor '#00DCB1'
+  color = if timeslot.total_participants == timeslot.activity.capacity
+    '#00DCB1'
+  elsif timeslot.total_participants >= 0.7*timeslot.activity.capacity
+    '#FFAA64'
+  else
+    '#FF6F59'
+  end
+  json.backgroundColor color
+  json.borderColor color
   json.textColor '#3C3C3C'
   json.allDay false
 end

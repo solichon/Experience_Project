@@ -2,13 +2,20 @@
   background-color: $light-gray;
 }
 
+.min-height {
+  min-height: calc(100vh - 135px);
+}
 
-h1 {
+.text-green {
   color: $green;
 }
 
+h1 {
+  @extend .text-green;
+}
+
 h5 {
-  color: $green;
+  @extend .text-green;
 }
 
 .flex-container {
@@ -17,24 +24,28 @@ h5 {
   align-items: baseline;
 }
 
-th {
-    text-align: left;
-    color: $green;
-}
 
 td {
     border-bottom: 1px solid #ddd;
 }
-
+.text-bold {
+  font-weight: bold;
+}
 
 .panel {
   margin-top: 20px;
 }
 
-h1 {
-  color: $green;
+
+
+.table-timeslot-show tr td{
+  white-space: nowrap;
+}
+.table-timeslot-show tr td:last-child{
+  white-space: inherit;
 }
 
 // table {
 //   white-space: nowrap;
 // }
+

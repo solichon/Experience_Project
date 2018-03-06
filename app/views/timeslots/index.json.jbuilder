@@ -11,7 +11,7 @@ json.array! @timeslots do |timeslot|
   else
     '#FF6F59'
   end
-  json.backgroundColor color
+  # json.backgroundColor color
   json.borderColor color
   json.textColor '#3C3C3C'
   json.allDay false

@@ -4,6 +4,9 @@
 
 .popover-content a {
   display: block;
+  font-size: 16px;
+  color: $gray;
+  font-weight: 700;
 }
 
 .fc-event {
@@ -18,7 +21,9 @@
     border-radius: 5px;
 }
 
-
+.fc-today{
+   background-color: #F2F2F2;
+}
 
 // .fc-center {
 //   font-size: 24px;

@@ -47,7 +47,7 @@ $(document).ready(function() {
       // console.log('eventObj:', eventObj);
       $el.popover({
         html:true,
-        title: eventObj.title,
+        title: eventObj.capacity,
         content: `<a href="/timeslots/${eventObj.id}/bookings/new">Ajouter Réservation</a><a href="/timeslots/${eventObj.id}">Détails</a>` ,
         trigger: 'click',
         placement: 'top',

@@ -19,7 +19,7 @@ fr:
         submit: Valider
         plateforms: Plateformes
         statuses:
-          active: Active
+          active: Activée
           inactive: Désactivée
           archived: Archivée
       timeslot:

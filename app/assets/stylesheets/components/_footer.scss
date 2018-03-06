@@ -3,7 +3,7 @@
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background: $white;
+  background: $green;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -30,4 +30,6 @@
 }
 .footer .fa-heart {
   color: $white;
+  padding-left: 5px;
+  padding-right: 5px;
 }

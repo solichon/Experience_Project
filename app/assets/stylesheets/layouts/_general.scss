@@ -1,10 +1,7 @@
-.container {
-  margin: 10 auto;
-  max-width: 970px;
-}
 .wrapper {
   background-color: $light-gray;
 }
+
 
 h1 {
   color: $green;
@@ -13,3 +10,32 @@ h1 {
 h5 {
   color: $green;
 }
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+th {
+    text-align: left;
+    color: $green;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: $green;}
+
+.panel {
+  margin-top: 20px;
+}
+
+h1 {
+  color: $green;
+}
+
+// table {
+//   white-space: nowrap;
+// }

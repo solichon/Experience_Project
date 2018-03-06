@@ -3,8 +3,11 @@ json.array! @timeslots do |timeslot|
   json.title timeslot.title_for_calendar
   json.start timeslot.start_datetime
   json.end timeslot.end_datetime
+  json.borderColor '#00DCB1'
+  json.textColor '#3C3C3C'
   json.allDay false
 end
+
 
 
 # Output Json

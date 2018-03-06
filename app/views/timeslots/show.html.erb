@@ -1,34 +1,59 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
     <form action="#">
-      <h1 class="text-center">J’affiche le détail de mon créneau</h1>
+      <h1 class="text-center">Votre créneau  <%= link_to "#{@timeslot.activity.title}", activity_path(@timeslot.activity) %> du <%= l @timeslot.start_datetime, format: :custom_long %></h1>
     </form>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-xs-12 col-md-9 col-md-offset-2">
-    <h4><strong> Mon activité : </strong><%= link_to "#{@timeslot.activity.title}", activity_path(@timeslot.activity) %> - <%= l @timeslot.start_datetime, format: :custom %></h3>
-    <p><%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %></p>
-    <p>Début: <%= l @timeslot.start_datetime, format: :time %></p>
-    <p>Fin: <%= l @timeslot.end_datetime, format: :time %></p>
-    <p>Réservations: <%= @timeslot.total_participants %> / <%= @timeslot.activity.capacity %> </p>
+  <div class="col-xs-12 col-md-12 col-md-offset-0">
+
+       <div class="flex-container">
+        <div><h4><span class="label label-default">Début</span></h4></div>
+        <div><%= l @timeslot.start_datetime, format: :time %></div>
+        <div><h4><span class="label label-default">Fin</span></h4></div>
+        <div><%= l @timeslot.end_datetime, format: :time %></div>
+        <div><h4><span class="label label-default">Réservations</span></h4></div>
+        <div><%= @timeslot.total_participants %> / <%= @timeslot.activity.capacity %> </div>
+        <div><%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %></div>
+       </div>
     <br>
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12 col-md-9 col-md-offset-2">
-    <% @timeslot.bookings.each do |booking| %>
-      <p><%= t("activerecord.attributes.booking.statuses.#{booking.status}") %> |
-      <%= booking.client.first_name %> |
-      <%= booking.client.last_name %> |
-      <%= booking.client.phone_number %> |
-      <%= booking.client.email %> |
-      Adult(s): <%= booking.adults %> |
-      Enfant(s): <%= booking.children %> |
-      <%= humanized_money_with_symbol(booking.total_price) %></p>
-      <p>Commentaire: <%= booking.comments %></p>
-      <br>
-    <% end %>
+  <div class="col-xs-12 col-md-12 col-md-offset-0">
+    <div class="panel panel-default">
+      <table class="table table-responsive w-auto table-fixed">
+        <thead>
+          <tr>
+            <td>Statut</td>
+            <td>Prénom</td>
+            <td>Nom</td>
+            <td>Téléphone</td>
+            <td>E-mail</td>
+            <td>Adultes</td>
+            <td>Enfants</td>
+            <td>Total</td>
+            <td>Commentaire</td>
+          </tr>
+        </thead>
+        <tbody>
+        <% @timeslot.bookings.each do |booking| %>
+          <tr>
+            <td><%= t("activerecord.attributes.booking.statuses.#{booking.status}") %></td>
+            <td><%= booking.client.first_name %></td>
+            <td><%= booking.client.last_name %></td>
+            <td><%= booking.client.phone_number %></td>
+            <td><%= booking.client.email %></td>
+            <td><%= booking.adults %></td>
+            <td><%= booking.children %></td>
+            <td><%= humanized_money_with_symbol(booking.total_price) %></td>
+            <td><%= booking.comments %>
+          </tr>
+        </tbody>
+      <% end %>
+      </table>
+    </div>
   </div>
 </div>

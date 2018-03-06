@@ -1,28 +1,48 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+    <form action="#">
+      <h1 class="text-center">Je crée une nouvelle activité</h1>
+      <div class="row">
+        <div class="form-group">
+          <%= simple_form_for @activity do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :title, required: true, label: 'Titre' %>
+            <%= f.input :description, required: true %>
+            <%= f.input :duration_in_minutes, required: true, label: 'Durée (en minutes)' %>
+            <%= f.input :meeting_point, required: false, label: 'Lieu du RDV' %>
+            <%= f.input :capacity, required: true, label: 'Capacité (en personne)' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <%= f.input :adult_price_cents, required: true, label: 'Prix TTC adulte'%>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <%= f.input :child_price_cents, required: true, label: 'Prix TTC enfant'%>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+            <%= f.input :image, label: 'Photo' %>
+            <%= f.input :image_cache, as: :hidden %>
+            <%= f.submit "Valider", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <h2>Plateformes</h2>
+Plateformes uniquement Fake / CSS -->
+
 
 <%# if @activity.errors.any? %>
 <%# @activity.errors.full_messages %>
 <%# end %>
 
 
-<div class="row">
-  <div class="col-xs-5 col-xs-offset-1">
-<h1>Je crée une nouvelle activité</h1>
-<br>
-<%= simple_form_for @activity do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :title, required: true, label: 'Titre' %>
-  <%= f.input :description, required: true %>
-  <%= f.input :duration_in_minutes, required: true, label: 'Durée (en minutes)' %>
-  <%= f.input :meeting_point, required: false, label: 'Lieu du RDV' %>
-  <%= f.input :capacity, required: true, label: 'Capacité (en personne)' %>
-  <%= f.input :adult_price_cents, required: true, label: 'Prix TTC adulte'%>
-  <%= f.input :child_price_cents, required: true, label: 'Prix TTC enfant'%>
-  <%= f.input :image, label: 'Photo' %>
-  <%= f.input :image_cache, as: :hidden %>
-  <%= f.submit "Valider", class: "btn btn-primary" %>
-<% end %>
-  </div>
-</div>
-
-<!-- <h2>Plateformes</h2>
-Plateformes uniquement Fake / CSS -->

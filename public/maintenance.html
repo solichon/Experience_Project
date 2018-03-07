@@ -6,6 +6,10 @@
     <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" />
     <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+      <script src="https://cdn.statuspage.io/vendor/moment-timezone-with-data.js"></script>
+      <script src="https://cdn.statuspage.io/vendor/jstz.js"></script>
+      <script src="https://cdn.statuspage.io/vendor/localtimes.js"></script>
 
     <style>
      * {
@@ -358,28 +362,20 @@
 	<div class="nob"></div>
 	<div class="post left"></div>
 	<div class="post right"></div>
-	<div class="pane">
+	<div class="pane just-header">
 		<div class="headline sign-text-color">
-			404
-		</div>
-		<div class="context sign-text-color">
-			Cette page n'existe pas ou n'existe plus.<br>
-      Nous vous prions de nous excuser pour la gêne occasionnée.
+			Revenez en Arrière
 		</div>
 	</div>
 </div>
 <div class="text-container">
 	<div class="headline secondary-text-color">
-		404
+		Maintenance
 	</div>
 	<div class="context primary-text-color">
-		<p>
-			Nous vous invitons à revenir à la page d'accueil de notre site
-		</p>
-	</div>
-	<div class="buttons-container">
-		<a class="border-button" href="http://www.gege.io" target="_blank"><span class="fa fa-home"></span> Home Page</a>
-		<a class="border-button" href="mailto:hello@gege.io" target="_blank"><span class="fa fa-warning"></span> Report Problem</a>
+
+    <p>Désolé pour ce dérangement. Nous serons de nouveau opérationnels le plus vite possible..</p>
+
 	</div>
 </div>
 
@@ -488,7 +484,7 @@
        });
 
      };
-     var ep = new ErrorPage('body', "404", "sign");
+     var ep = new ErrorPage('body', "maintenance", "sign");
      ep.initialize();
 
      // hack to make sure content stays centered >_<

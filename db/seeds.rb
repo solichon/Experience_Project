@@ -263,7 +263,7 @@ puts "Creating timeslots seeds for initiation"
               comments: Faker::Hobbit.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -305,7 +305,7 @@ puts "Creating timeslots seeds for initiation"
               comments: Faker::Friends.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -347,7 +347,7 @@ puts "Creating timeslots seeds for initiation"
               comments: Faker::HarryPotter.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -389,7 +389,7 @@ puts "Creating timeslots seeds for initiation"
               comments: Faker::HowIMetYourMother.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -431,7 +431,7 @@ puts "Creating timeslots seeds for initiation"
               comments: Faker::Movie.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -473,7 +473,7 @@ puts "Creating timeslots seeds for initiation"
               comments: Faker::Simpsons.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -515,7 +515,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
               comments: Faker::Hobbit.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -554,7 +554,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
               comments: Faker::Friends.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -593,7 +593,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
               comments: Faker::HarryPotter.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -632,7 +632,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
               comments: Faker::HowIMetYourMother.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -671,7 +671,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
               comments: Faker::Movie.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -713,7 +713,7 @@ puts "Creating timeslots seeds for cours_particuliers"
               comments: Faker::Simpsons.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -752,7 +752,7 @@ puts "Creating timeslots seeds for cours_particuliers"
               comments: Faker::Hobbit.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -791,7 +791,7 @@ puts "Creating timeslots seeds for cours_particuliers"
               comments: Faker::Friends.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -830,7 +830,7 @@ puts "Creating timeslots seeds for cours_particuliers"
               comments: Faker::HarryPotter.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end
@@ -869,7 +869,7 @@ puts "Creating timeslots seeds for cours_particuliers"
               comments: Faker::HowIMetYourMother.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
-              status: (0..1).to_a.sample.to_i
+              status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds #{l + 1}"
           end

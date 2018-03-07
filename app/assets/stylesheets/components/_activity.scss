@@ -17,6 +17,17 @@
   width: 100%;
   height: auto;
 }
+
+
+.picture-frame-sm {
+  border: solid 7px white;
+  box-shadow: 0 10px 20px rgba(0,0,0,.3);
+  transform: rotate(-3deg);
+  transition: all 0.5s;
+  width: 30%;
+  height: auto;
+}
+
 .picture-frame:hover {
   transform: rotate(0deg);
 }

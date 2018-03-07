@@ -16,7 +16,7 @@
 
         <div class="h4"><span class="label label-default mr-  pull-left">Réservations</span><span class="h4 pull-left m0"><%= @timeslot.total_participants %> / <%= @timeslot.activity.capacity %></span> </div>
 
-        <div><%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %></div>
+        <div class="h3"><%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %></div>
        </div>
     <br>
   </div>
@@ -55,5 +55,8 @@
       <% end %>
       </table>
     </div>
+     <div class="row text-center">
+        <%= cl_image_tag @timeslot.activity.image, class: "picture-frame-sm", height: 200, width: 300, crop: :fill %>
+      </div>
   </div>
 </div>

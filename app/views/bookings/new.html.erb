@@ -44,7 +44,7 @@
         <div class="form-group">
             <%= f.input :comments %>
             <%= f.input :status, collection: Booking::statuses  %>
-            <%= f.input :channel_source, collection: Booking::channel_sources  %>
+            <%= f.input :channel_source, collection: Booking::channel_sources %>
             <%= f.submit "Valider", class: "btn btn-primary" %>
           <% end %>
         </div>

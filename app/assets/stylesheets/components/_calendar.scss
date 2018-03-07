@@ -1,5 +1,5 @@
 .calendar {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .popover-content a {
@@ -22,7 +22,7 @@
 }
 
 .fc-today{
-   background-color: #F2F2F2;
+   background-color: #F2F3F4;
 }
 
 .fc-center>h2 {
@@ -31,7 +31,7 @@
 }
 
 .fc-time-grid-event {
-  border-width: 3px !important;
+  border-width: 2px !important;
   border-radius: 10px !important;
 }
 .fc-time-grid-event[aria-describedby] {
@@ -40,6 +40,24 @@
   transform: scale(1.03);
 }
 
+.fc-right .btn-default.active, .btn-default:hover {
+  background-color: #F2F3F4;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.fc-title {
+  font-weight: bold;
+}
+
+.popover-title {
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+}
+
+.fc-icon-fa {
+  font-family: FontAwesome;
+}
 
 // .fc-center {
 //   font-size: 24px;

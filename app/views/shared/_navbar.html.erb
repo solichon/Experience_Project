@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo_gege.png", height: 60 %>
+  <%= link_to timeslots_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo_gege.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -12,7 +12,7 @@
       <!-- Links when logged in -->
       <%= link_to "Réservations", timeslots_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Activités", activities_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Clients", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -39,7 +39,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "btn-third navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 

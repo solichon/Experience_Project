@@ -43,7 +43,7 @@ class Timeslot < ApplicationRecord
 
   def capacity_for_title
     if total_participants == activity.capacity
-      "Complet"
+      "Complet" #self.status = "complete"
     elsif total_participants >= 0.7*activity.capacity
       "👤 #{total_participants}/#{activity.capacity}"
     else

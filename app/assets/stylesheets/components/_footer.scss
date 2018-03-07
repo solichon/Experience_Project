@@ -2,16 +2,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
-  background: $green;
+  top: 0;
+  background: $light-gray;
   display: flex;
   text-align: center;
   justify-content: center;
-  height: 60px;
-  padding: 0px 50px;
+  height: 63px;
   color: rgba(0,0,0,0.3);
-  padding-top: 15px;
-  margin-top: 15px;
 }
 
 .footer-links {
@@ -22,14 +19,20 @@
   color: $green;
   opacity: 0.15;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 22px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
   opacity: 1;
 }
 .footer .fa-heart {
-  color: $white;
-  padding-left: 5px;
-  padding-right: 5px;
+  color: $green;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 3px;
+}
+
+.footer-text {
+  padding-top: 17px;
+  font-size: 16px;
 }

@@ -1,9 +1,9 @@
 fr:
   shared:
     navbar:
-      profile: Profil
+      profile: 'Profil'
       settings: 'Paramètres'
-      sign_out: Se déconnecter
+      sign_out: 'Se déconnecter'
 
   date:
     abbr_day_names:

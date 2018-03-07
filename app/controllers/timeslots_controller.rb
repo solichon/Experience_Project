@@ -11,13 +11,6 @@ class TimeslotsController < ApplicationController
 
   def show
     @timeslot = Timeslot.find(params[:id])
-    if @timeslot.total_participants == 0
-      @timeslot.empty!
-    elsif @timeslot.total_participants == @timeslot.activity.capacity
-      @timeslot.complete!
-    else
-      @timeslot.partial!
-    end
   end
 
   def new

@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "^3.2.2",
     "bootstrap": "3",
+    "bootstrap-select": "^1.12.4",
     "fullcalendar": "^3.9.0",
     "jquery": "^3.3.1"
   },

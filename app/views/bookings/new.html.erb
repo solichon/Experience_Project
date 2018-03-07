@@ -40,15 +40,15 @@
         <a href="#" class="btn btn-primary mt">Nouveau</a>
       </div>
       <div class="col-xs-6">
-        <%= f.input :adults %>
+        <%= f.input :adults, input_html: {value: '1', min: '0'} %>
       </div>
       <div class="col-xs-6">
-        <%= f.input :children %>
+        <%= f.input :children, input_html: {min: '0'} %>
       </div>
       <div class="col-xs-12">
         <%= f.input :comments %>
-        <%= f.input :status, collection: booking_status_collection  %>
-        <%= f.input :channel_source, collection: channel_sources_collection  %>
+        <%= f.input :status, collection: booking_status_collection, selected: Booking::statuses.first %>
+        <%= f.input :channel_source, collection: channel_sources_collection, selected: t("activerecord.attributes.booking.channel_sources.gege_call_center")  %>
         <%= f.submit "Valider", class: "btn btn-primary" %>
       </div>
       <% end %>

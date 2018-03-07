@@ -1,5 +1,10 @@
+
 .calendar {
-  margin-top: 40px;
+  // margin-top: window.innerWidth > 700 ? 40px : 5px;
+  margin-top: 0px;
+  @media screen and (min-width: 700px) {
+    margin-top: 40px;
+  }
 }
 
 .popover-content a {

@@ -37,8 +37,12 @@ class Timeslot < ApplicationRecord
     start_datetime.strftime("%d %b %Hh%M")
   end
 
-  def title_for_calendar
-    "#{activity.title}\n#{capacity_for_title}"
+  def title_for_calendar(is_xs)
+    if is_xs
+      "#{activity.title}"
+    else
+      "#{activity.title}\n#{capacity_for_title}"
+    end
   end
 
   def capacity_for_title

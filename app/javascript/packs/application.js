@@ -1,3 +1,6 @@
+import 'bootstrap-select';
+import 'bootstrap-select/dist/css/bootstrap-select.css';
+
 import "bootstrap";
 import $ from 'jquery';
 
@@ -6,8 +9,6 @@ import 'fullcalendar/dist/fullcalendar.css';
 import 'fullcalendar/dist/locale/fr.js'
 // import 'fullcalendar/lang/fr.js';
 
-import 'bootstrap-select';
-import 'bootstrap-select/dist/css/bootstrap-select.css';
 
 
 $(document).ready(function() {

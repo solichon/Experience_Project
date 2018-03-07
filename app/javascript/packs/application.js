@@ -4,11 +4,14 @@ import $ from 'jquery';
 import 'fullcalendar';
 import 'fullcalendar/dist/fullcalendar.css';
 import 'fullcalendar/dist/locale/fr.js'
-
 // import 'fullcalendar/lang/fr.js';
+
+import 'bootstrap-select';
+import 'bootstrap-select/dist/css/bootstrap-select.css';
 
 
 $(document).ready(function() {
+  $('.selectpicker').selectpicker();
 
   // page is now ready, initialize the calendar...
 

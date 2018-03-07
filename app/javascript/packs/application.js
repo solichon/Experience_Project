@@ -20,7 +20,7 @@ $(document).ready(function() {
     defaultView: 'agendaWeek',
     themeSystem: 'bootstrap3',
     header: {
-      left: 'prev,next',
+      left: 'prev,next,addPrint',
       center: 'title',
       right: 'month,agendaWeek,agendaDay,'
     },
@@ -29,27 +29,31 @@ $(document).ready(function() {
       weekNumbers: true,
       eventLimit: true, // allow "more" link when too many events
     },
-    contentHeight: 588,  //size height
+    contentHeight: 532,  //size height
     aspectRatio: 1, //ration height vs. width (don't work)
-    minTime: '10:00:00',
-    maxTime: '20:00:00',
+    minTime: '09:00:00',
+    maxTime: '18:00:00',
     allDaySlot: false,
     nowIndicator: true,
     displayEventTime: false,
     // put your options and callbacks here
     titleFormat: '[Gégé, quel est mon planning?]',
-    // customButtons: {
-    //   addTitle: {
-    //     text: 'Gégé, quel est mon planning?'
-    //   }
-    // },
+    customButtons: {
+      addPrint: {
+        text: 'Imprimer',
+        bootstrapGlyphicon:'glyphicon glyphicon-print',
+        click: function() {
+          window.print();
+        }
+      }
+    },
     // eventClick: function(calEvent, jsEvent, view) {
     //   debugger;
     //   alert('clickend');
     eventRender: function(eventObj, $el) {
       // console.log('eventObj:', eventObj);
       $el.popover({
-        html:true,
+        html: true,
         title: eventObj.capacity,
         content: `<a href="/timeslots/${eventObj.id}/bookings/new">Ajouter Réservation</a><a href="/timeslots/${eventObj.id}">Détails</a>` ,
         trigger: 'click',
@@ -60,7 +64,18 @@ $(document).ready(function() {
     events: '/timeslots',
     eventBackgroundColor: '#FFFFFF'
 
-
   })
+});
+
+
+$(document).on('click', function(e) {
+  $('[data-toggle="popover"],[data-original-title]').each(function() {
+    //the 'is' for buttons that trigger popups
+    //the 'has' for icons within a button that triggers a popup
+    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+      $(this).popover('hide').data('bs.popover').inState.click = false // fix for BS 3.3.6
+    }
+
+  });
 });
 

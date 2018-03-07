@@ -17,22 +17,47 @@ class Timeslot < ApplicationRecord
     return counter
   end
 
+    def total_adults
+    counter = 0
+    self.bookings.each do |i|
+      counter += i.adults
+    end
+    return counter
+  end
+
+  def total_children
+    counter = 0
+    self.bookings.each do |i|
+      counter += i.children
+    end
+    return counter
+  end
+
   def name
     start_datetime.strftime("%d %b %Hh%M")
   end
 
-
   def title_for_calendar
-    "#{activity.title}"
+    "#{activity.title}\n#{capacity_for_title}"
+  end
+
+  def capacity_for_title
+    if total_participants == activity.capacity
+      "Complet" #self.status = "complete"
+    elsif total_participants >= 0.7*activity.capacity
+      "👤 #{total_participants}/#{activity.capacity}"
+    else
+      "👤 #{total_participants}/#{activity.capacity}"
+    end
   end
 
   def capacity_for_calendar
     if total_participants == activity.capacity
-      "Complet" #self.status = "complete"
+      "<span style='color:#00DCB1;'>🧔🏻#{total_adults} / 👦🏻#{total_children} </span>"
     elsif total_participants >= 0.7*activity.capacity
-      "👤<span style='color:#00DCB1;'>#{total_participants}/#{activity.capacity}</span>"
+      "<span style='color:#FFAA64;'>🧔🏻#{total_adults} / 👦🏻#{total_children}</span>"
     else
-      "👤<span style='color:#FF6F59;'>#{total_participants}/#{activity.capacity}</span>"
+      "<span style='color:#FF6F59;'>🧔🏻#{total_adults} / 👦🏻#{total_children}</span>"
     end
   end
 end

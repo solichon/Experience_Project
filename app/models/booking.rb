@@ -9,6 +9,7 @@ class Booking < ApplicationRecord
     :tripadvisor, :booking_com]
 
   before_validation :calculate_total_price
+  after_create :update_timeslot_status
 
   validates :total_pax, numericality: { greater_than_or_equal_to: 1 }
   validates :adults, presence: true, numericality: { greater_than_or_equal_to: 0 }
@@ -21,7 +22,6 @@ class Booking < ApplicationRecord
   def total_pax
     adults + children
   end
-
 
   def calculate_total_price
     adults_price = self.timeslot.activity.adult_price * self.adults
@@ -38,6 +38,18 @@ class Booking < ApplicationRecord
       errors.add(:children, "Il ne reste plus que #{remaining} place(s) au total")
     end
   end
+
+  private
+  def update_timeslot_status
+    if self.timeslot.total_participants + total_pax == 0
+      self.timeslot.empty!
+    elsif self.timeslot.total_participants + total_pax == self.timeslot.activity.capacity
+      self.timeslot.complete!
+    else
+      self.timeslot.partial!
+    end
+  end
+
 end
 
 # class Booking < ApplicationRecord

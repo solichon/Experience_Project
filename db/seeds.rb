@@ -175,9 +175,9 @@ initiation = Activity.new(
   status: 0,
   adult_price: 90,
   child_price: 70,
-  user: test
+  user: test,
+  image: File.new(File.join(__dir__, "../app/assets/images/initiation.jpg"))
   )
-initiation.remote_image_url = "http://estacionautica.com/wp-content/uploads/2016/07/caiac.jpg"
 initiation.save!
 
 perfectionnement = Activity.new(
@@ -189,9 +189,9 @@ perfectionnement = Activity.new(
   status: 0,
   adult_price: 90,
   child_price: 70,
-  user: test
+  user: test,
+  image: File.new(File.join(__dir__, "../app/assets/images/perfectionnement.jpg"))
   )
-perfectionnement.remote_image_url = "http://estacionautica.com/wp-content/uploads/2016/07/caiac.jpg"
 perfectionnement.save!
 
 cours_particuliers = Activity.new(
@@ -203,9 +203,9 @@ cours_particuliers = Activity.new(
   status: 0,
   adult_price: 120,
   child_price: 100,
-  user: test
+  user: test,
+  image: File.new(File.join(__dir__, "../app/assets/images/cours_particuliers.jpg"))
   )
-cours_particuliers.remote_image_url = "http://estacionautica.com/wp-content/uploads/2016/07/caiac.jpg"
 cours_particuliers.save!
 
 puts "done activity seeds"
@@ -229,13 +229,16 @@ puts "Creating timeslots seeds for initiation"
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 14 38 19 30",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
           adults = (0..1).to_a.sample.to_i
           children = (0..1).to_a.sample.to_i
+          if (adults + children) == 0
+            adults = 1
+          end
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
           total_price = adults_price + children_price
@@ -245,7 +248,7 @@ puts "Creating timeslots seeds for initiation"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::Hobbit.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -268,13 +271,16 @@ puts "Creating timeslots seeds for initiation"
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{13 * (k+1)} #{24 * (k+1)} #{33 * (k+1)} #{19 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
           adults = (0..1).to_a.sample.to_i
           children = (0..1).to_a.sample.to_i
+          if (adults + children) == 0
+            adults = 1
+          end
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
           total_price = adults_price + children_price
@@ -284,7 +290,7 @@ puts "Creating timeslots seeds for initiation"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::Friends.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -307,13 +313,16 @@ puts "Creating timeslots seeds for initiation"
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{22 * (k+1)} #{49 * (k+1)} #{14 * (k+1)} #{32 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
           adults = (0..1).to_a.sample.to_i
           children = (0..1).to_a.sample.to_i
+          if (adults + children) == 0
+            adults = 1
+          end
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
           total_price = adults_price + children_price
@@ -323,7 +332,7 @@ puts "Creating timeslots seeds for initiation"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::HarryPotter.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -346,13 +355,16 @@ puts "Creating timeslots seeds for initiation"
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{18 * (k+1)} #{41 * (k+1)} #{49 * (k+1)} #{37 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
           adults = (0..1).to_a.sample.to_i
           children = (0..1).to_a.sample.to_i
+          if (adults + children) == 0
+            adults = 1
+          end
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
           total_price = adults_price + children_price
@@ -362,7 +374,7 @@ puts "Creating timeslots seeds for initiation"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::HowIMetYourMother.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -385,13 +397,16 @@ puts "Creating timeslots seeds for initiation"
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{48 * (k+1)} #{29 * (k+1)} #{11 * (k+1)} #{28 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
           adults = (0..1).to_a.sample.to_i
           children = (0..1).to_a.sample.to_i
+          if (adults + children) == 0
+            adults = 1
+          end
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
           total_price = adults_price + children_price
@@ -401,7 +416,7 @@ puts "Creating timeslots seeds for initiation"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::Movie.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -424,13 +439,16 @@ puts "Creating timeslots seeds for initiation"
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{49 * (k+1)} #{37 * (k+1)} #{41 * (k+1)} #{28 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
           adults = (0..1).to_a.sample.to_i
           children = (0..1).to_a.sample.to_i
+          if (adults + children) == 0
+            adults = 1
+          end
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
           total_price = adults_price + children_price
@@ -440,7 +458,7 @@ puts "Creating timeslots seeds for initiation"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::Simpsons.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -462,16 +480,16 @@ puts "Creating timeslots seeds for perfectionnement.title"
       status: "empty"
       )
     puts "done timeslot seed #{timeslot.activity.title} #{j + 1}"
-      2.times do |k|
+      (0..2).to_a.sample.to_i.times do |k|
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{19 * (k+1)} #{28 * (k+1)} #{41 * (k+1)} #{27 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
-          adults = (0..1).to_a.sample.to_i
+          adults = 1
           children = 0
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
@@ -482,7 +500,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::Hobbit.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -501,16 +519,16 @@ puts "Creating timeslots seeds for perfectionnement.title"
       status: "empty"
       )
     puts "done timeslot seed #{timeslot.activity.title} #{j + 1}"
-      2.times do |k|
+      (0..2).to_a.sample.to_i.times do |k|
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{11 * (k+1)} #{26 * (k+1)} #{42 * (k+1)} #{39 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
-          adults = (0..1).to_a.sample.to_i
+          adults = 1
           children = 0
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
@@ -521,7 +539,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::Friends.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -540,16 +558,16 @@ puts "Creating timeslots seeds for perfectionnement.title"
       status: "empty"
       )
     puts "done timeslot seed #{timeslot.activity.title} #{j + 1}"
-      2.times do |k|
+      (0..2).to_a.sample.to_i.times do |k|
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{11 * (k+1)} #{28 * (k+1)} #{31 * (k+1)} #{47 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
-          adults = (0..1).to_a.sample.to_i
+          adults = 1
           children = 0
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
@@ -560,7 +578,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::HarryPotter.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -579,16 +597,16 @@ puts "Creating timeslots seeds for perfectionnement.title"
       status: "empty"
       )
     puts "done timeslot seed #{timeslot.activity.title} #{j + 1}"
-      2.times do |k|
+      (0..2).to_a.sample.to_i.times do |k|
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{41 * (k+1)} #{27 * (k+1)} #{45 * (k+1)} #{15 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
-          adults = (0..1).to_a.sample.to_i
+          adults = 1
           children = 0
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
@@ -599,7 +617,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::HowIMetYourMother.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -618,16 +636,16 @@ puts "Creating timeslots seeds for perfectionnement.title"
       status: "empty"
       )
     puts "done timeslot seed #{timeslot.activity.title} #{j + 1}"
-      2.times do |k|
+      (0..2).to_a.sample.to_i.times do |k|
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{15 * (k+1)} #{41 * (k+1)} #{28 * (k+1)} #{39 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
-          adults = (0..1).to_a.sample.to_i
+          adults = 1
           children = 0
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
@@ -638,7 +656,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::Movie.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -660,16 +678,16 @@ puts "Creating timeslots seeds for cours_particuliers"
       status: "empty"
       )
     puts "done timeslot seed #{timeslot.activity.title} #{j + 1}"
-      1.times do |k|
+      (0..1).to_a.sample.to_i.times do |k|
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 13 08 41 23",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
-          adults = (0..1).to_a.sample.to_i
+          adults = 1
           children = 0
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
@@ -680,7 +698,7 @@ puts "Creating timeslots seeds for cours_particuliers"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::Simpsons.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -699,16 +717,16 @@ puts "Creating timeslots seeds for cours_particuliers"
       status: "empty"
       )
     puts "done timeslot seed #{timeslot.activity.title} #{j + 1}"
-      1.times do |k|
+      (0..1).to_a.sample.to_i.times do |k|
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{16 * (k+1)} #{02 * (k+1)} #{19 * (k+1)} #{20 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
-          adults = (0..1).to_a.sample.to_i
+          adults = 1
           children = 0
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
@@ -719,7 +737,7 @@ puts "Creating timeslots seeds for cours_particuliers"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::Hobbit.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -738,16 +756,16 @@ puts "Creating timeslots seeds for cours_particuliers"
       status: "empty"
       )
     puts "done timeslot seed #{timeslot.activity.title} #{j + 1}"
-      1.times do |k|
+      (0..1).to_a.sample.to_i.times do |k|
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{14 * (k+1)} #{35 * (k+1)} #{39 * (k+1)} #{03 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
-          adults = (0..1).to_a.sample.to_i
+          adults = 1
           children = 0
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
@@ -758,7 +776,7 @@ puts "Creating timeslots seeds for cours_particuliers"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::Friends.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -777,16 +795,16 @@ puts "Creating timeslots seeds for cours_particuliers"
       status: "empty"
       )
     puts "done timeslot seed #{timeslot.activity.title} #{j + 1}"
-      1.times do |k|
+      (0..1).to_a.sample.to_i.times do |k|
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 #{45 * (k+1)} #{01 * (k+1)} #{39 * (k+1)} #{36 * (k+1)}",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
-          adults = (0..1).to_a.sample.to_i
+          adults = 1
           children = 0
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
@@ -797,7 +815,7 @@ puts "Creating timeslots seeds for cours_particuliers"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::HarryPotter.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i
@@ -816,16 +834,16 @@ puts "Creating timeslots seeds for cours_particuliers"
       status: "empty"
       )
     puts "done timeslot seed #{timeslot.activity.title} #{j + 1}"
-      1.times do |k|
+      (0..1).to_a.sample.to_i.times do |k|
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: Faker::PhoneNumber.phone_number,
+            phone_number: "06 39 58 37 02",
             email: Faker::Internet.email,
           )
           puts "done clients seeds #{k + 1}"
         puts "Creating booking seeds"
-          adults = (0..1).to_a.sample.to_i
+          adults = 1
           children = 0
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
@@ -836,7 +854,7 @@ puts "Creating timeslots seeds for cours_particuliers"
               timeslot: timeslot,
               adults: adults,
               children: children,
-              comments: Faker::Lorem.sentence,
+              comments: Faker::HowIMetYourMother.quote,
               total_price: total_price,
               channel_source: (0..5).to_a.sample.to_i,
               status: (0..1).to_a.sample.to_i

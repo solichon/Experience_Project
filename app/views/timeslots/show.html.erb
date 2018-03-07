@@ -55,11 +55,18 @@
       <% end %>
       </table>
     </div>
+
+        <br>
+    <div class="col-xs-12 col-md-4 col-md-offset-4">
      <div class="row text-center">
       <%= link_to activity_path(@timeslot.activity) do %>
-        <%= cl_image_tag @timeslot.activity.image, class: "picture-frame-sm", height: 200, width: 300, crop: :fill %>
+        <%= cl_image_tag @timeslot.activity.image, class: "picture-frame", height: 200, width: 300, crop: :fill %>
         <% end %>
-
+        <br>
+        <br>
+        <br>
       </div>
+      </div>
+
   </div>
 </div>

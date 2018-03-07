@@ -12,14 +12,30 @@
 }
 
 .btn-secondary {
+    background-color:hsl(208, 100%, 100%);
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     background-color: $green;
-    padding: 12px 23px 13px;
+    padding: 15px 24px 15px;
     margin: 0;
+    margin-top: 15px;
     margin-bottom: 12px;
     border-radius: 5px;
+}
+
+.btn-third {
+    background-color:hsl(208, 100%, 100%);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: $green;
+    padding: 6px 13px 6px;
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    margin-right: 32px;
 }
 
 .checkbox-toggle-wrap {

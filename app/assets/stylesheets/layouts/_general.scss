@@ -10,6 +10,11 @@
   color: $green;
 }
 
+.text-white {
+  color: $white;
+}
+
+
 h1 {
   @extend .text-green;
 }
@@ -23,6 +28,7 @@ h5 {
   justify-content: space-between;
   align-items: baseline;
 }
+
 
 
 td {
@@ -44,8 +50,3 @@ td {
 .table-timeslot-show tr td:last-child{
   white-space: inherit;
 }
-
-// table {
-//   white-space: nowrap;
-// }
-

@@ -1,28 +1,23 @@
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-<!--     <form action="#"> -->
-      <h2 class="text-center"><%= t(".resend_unlock_instructions") %></h2>
-      <div class="row">
-        <div class="form-group">
-          <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-            <%= f.error_notification %>
-            <%= f.full_error :unlock_token %>
-        </div>
-        <div class="form-inputs">
-            <%= f.input :email, required: true, autofocus: true %>
-        </div>
-        <div class="form-actions text-center">
-            <%= f.button :submit, t(".resend_unlock_instructions") %>
-          <% end %>
-        </div>
-        <div class="row">
-          <div class="text-center">
-            <br>
-            <%= render "devise/shared/links" %>
-          </div>
-        </div>
-      </div>
-<!--     </form> -->
+    <h2 class="text-center"><%= t(".resend_unlock_instructions") %></h2>
+    <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+      <%= f.error_notification %>
+      <%= f.full_error :unlock_token %>
+
+    <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+    </div>
+
+    <div class="form-actions text-center">
+      <%= f.button :submit, t(".resend_unlock_instructions") %>
+    <% end %>
+    </div>
+
+    <div class="text-center">
+      <br>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
 

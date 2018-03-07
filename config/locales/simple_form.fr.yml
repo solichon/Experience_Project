@@ -10,6 +10,14 @@ fr:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
+    labels:
+      booking:
+        adults: 'Adultes'
+        children: 'Enfants'
+        comments: 'Commentaires'
+        status: 'Etat de Réservation'
+        channel_source: 'Source'
+
     # placeholders:
     #   user:
     #     email: @gmail.com

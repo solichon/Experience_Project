@@ -11,6 +11,13 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.timeslot = @timeslot
     if @booking.save
+      if @timeslot.total_participants == 0
+        @timeslot.empty!
+      elsif @timeslot.total_participants == @timeslot.activity.capacity
+        @timeslot.complete!
+      else
+        @timeslot.partial!
+      end
       redirect_to timeslot_path(@booking.timeslot)
     else
       render :new

@@ -228,7 +228,7 @@ puts "done activity seeds"
 
 puts "Creating timeslots seeds for initiation"
   40.times do |j|
-    start_datetime = Time.new(2018, 02, 26, 15, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 02, 26, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + initiation.duration_in_minutes * 60,
@@ -271,7 +271,7 @@ puts "Creating timeslots seeds for initiation"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 02, 27, 11, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 02, 27, 10, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + initiation.duration_in_minutes * 60,
@@ -313,7 +313,7 @@ puts "Creating timeslots seeds for initiation"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 02, 28, 15, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 02, 28, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + initiation.duration_in_minutes * 60,
@@ -355,7 +355,7 @@ puts "Creating timeslots seeds for initiation"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 03, 01, 11, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 03, 01, 10, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + initiation.duration_in_minutes * 60,
@@ -397,7 +397,7 @@ puts "Creating timeslots seeds for initiation"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 03, 02, 15, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 03, 02, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + initiation.duration_in_minutes * 60,
@@ -439,7 +439,7 @@ puts "Creating timeslots seeds for initiation"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 03, 03, 11, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 03, 03, 10, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + initiation.duration_in_minutes * 60,
@@ -484,7 +484,7 @@ puts "Creating timeslots seeds for initiation"
 
 puts "Creating timeslots seeds for perfectionnement.title"
   40.times do |j|
-    start_datetime = Time.new(2018, 02, 27, 15, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 02, 27, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + perfectionnement.duration_in_minutes * 60,
@@ -523,7 +523,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 02, 28, 11, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 02, 28, 10, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + perfectionnement.duration_in_minutes * 60,
@@ -562,7 +562,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 03, 01, 15, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 03, 01, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + perfectionnement.duration_in_minutes * 60,
@@ -601,7 +601,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 03, 02, 11, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 03, 02, 10, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + perfectionnement.duration_in_minutes * 60,
@@ -640,7 +640,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 03, 03, 15, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 03, 03, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + perfectionnement.duration_in_minutes * 60,
@@ -682,7 +682,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
 
 puts "Creating timeslots seeds for cours_particuliers"
   40.times do |j|
-    start_datetime = Time.new(2018, 02, 27, 17, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 02, 27, 16, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + cours_particuliers.duration_in_minutes * 60,
@@ -721,7 +721,7 @@ puts "Creating timeslots seeds for cours_particuliers"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 02, 28, 13, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 02, 28, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + cours_particuliers.duration_in_minutes * 60,
@@ -760,7 +760,7 @@ puts "Creating timeslots seeds for cours_particuliers"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 03, 01, 17, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 03, 01, 16, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + cours_particuliers.duration_in_minutes * 60,
@@ -799,7 +799,7 @@ puts "Creating timeslots seeds for cours_particuliers"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 03, 02, 13, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 03, 02, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + cours_particuliers.duration_in_minutes * 60,
@@ -838,7 +838,7 @@ puts "Creating timeslots seeds for cours_particuliers"
   end
 
   40.times do |j|
-    start_datetime = Time.new(2018, 03, 03, 17, 00) + j * 7 * 24 * 60 * 60
+    start_datetime = Time.new(2018, 03, 03, 16, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
       end_datetime: start_datetime + cours_particuliers.duration_in_minutes * 60,

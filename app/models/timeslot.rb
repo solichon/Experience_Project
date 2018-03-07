@@ -28,7 +28,7 @@ class Timeslot < ApplicationRecord
 
   def capacity_for_calendar
     if total_participants == activity.capacity
-      "Complet"
+      "Complet" #self.status = "complete"
     elsif total_participants >= 0.7*activity.capacity
       "👤<span style='color:#00DCB1;'>#{total_participants}/#{activity.capacity}</span>"
     else

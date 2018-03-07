@@ -11,6 +11,13 @@ class TimeslotsController < ApplicationController
 
   def show
     @timeslot = Timeslot.find(params[:id])
+    if @timeslot.total_participants == 0
+      @timeslot.empty!
+    elsif @timeslot.total_participants == @timeslot.activity.capacity
+      @timeslot.complete!
+    else
+      @timeslot.partial!
+    end
   end
 
   def new
@@ -19,7 +26,7 @@ class TimeslotsController < ApplicationController
 
   def create
     @timeslot = Timeslot.new(timeslot_params)
-    @timeslot.status = "empty"
+    @timeslot.empty!
     activity = Activity.find(timeslot_params[:activity_id])
     @timeslot.end_datetime = @timeslot.start_datetime + activity.duration_in_minutes * 60
     if @timeslot.save

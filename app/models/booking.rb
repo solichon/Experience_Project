@@ -10,7 +10,7 @@ class Booking < ApplicationRecord
 
   before_validation :calculate_total_price
 
-  validates :total_pax, numericality: { greater_than_or_equal_to: 0 } # to be changed in 1
+  validates :total_pax, numericality: { greater_than_or_equal_to: 1 }
   validates :adults, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :children, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :total_price, presence: true, numericality: true

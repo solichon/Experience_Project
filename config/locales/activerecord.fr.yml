@@ -43,9 +43,9 @@ fr:
           paid: Payé
           cancelled: Annulé
         channel_sources:
+          gege_call_center: Centre d'appel Gégé
           direct: Directe - Gégé.io
-          gege_online: Gégé plugin - Mon site
-          gege_call_center: Gégé call center
+          gege_online: Module de réservation - Mon site
           airbnb: Airbnb
           tripadvisor: Tripadvisor
           booking_com: Booking.com

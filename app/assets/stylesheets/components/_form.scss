@@ -8,3 +8,19 @@ form .btn {
   width: 100%;
   line-height: 30px;
 }
+
+abbr {
+ text-decoration: none;
+   text-decoration-line: none;
+   text-decoration-style: dotted;
+   text-decoration-color: initial;
+}
+
+abbr[title], abbr[data-original-title] {
+    border-bottom: none
+}
+
+input[type="file"] {
+    display: block;
+    line-height: 5px;
+}

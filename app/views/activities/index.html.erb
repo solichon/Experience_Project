@@ -1,5 +1,5 @@
 <div class="row">
-  <h3 class="text-center text-green mb">Gégé, et mes activités ?</h3>
+  <h3 class="text-center text-green mb+">Gégé, et mes activités ?</h3>
   <% @activities.each do |activity| %>
   <div class="col-xs-12 col-sm-4">
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(activity.image) %>);">
@@ -8,7 +8,7 @@
         <h2><%= activity.title %></h2>
         <p><%= t("activerecord.attributes.activity.statuses.#{activity.status}") %></p>
       </div>
-        <%=  link_to activity.title, activity_path(activity), class: "card-link" %>
+        <%=  link_to '', activity_path(activity), class: "card-link" %>
     </div>
   </div>
   <% end %>

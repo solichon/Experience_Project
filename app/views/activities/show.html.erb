@@ -1,13 +1,5 @@
-<!-- Taille image (uploader lors de la création) / Vérifier la size -->
 <div class="row">
-  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
-    <form action="#">
-
-    <h1 class="text-center activity">Votre activité <strong><%= @activity.title %> en détail</strong></h1>
-    </form>
-  </div>
-</div>
-<div class="row">
+  <h3 class="text-center text-green activity mb">Votre activité <%= @activity.title %> en détail</h3>
   <div class="col-xs-12 col-md-6 col-md-offset-0">
     <ul class="list-group">
        <li class="list-group-item"> <h5 class="detail-activity"><strong><span class="glyphicon glyphicon-search"></span> <strong> Description </strong></h5><%= @activity.description %></li>
@@ -52,11 +44,7 @@
       <div class="row text-center">
           <br>
           <%= link_to "Nouveau créneau", href="/timeslots/new", class: "btn btn-primary" %>
-          <br>
-          <br>
-          <br>
       </div>
-    </div>
   </div>
 </div>
 

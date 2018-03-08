@@ -19,7 +19,7 @@ class TimeslotsController < ApplicationController
 
   def create
     @timeslot = Timeslot.new(timeslot_params)
-    @timeslot.empty!
+    @timeslot.status = "empty"
     activity = Activity.find(timeslot_params[:activity_id])
     @timeslot.end_datetime = @timeslot.start_datetime + activity.duration_in_minutes * 60
     if @timeslot.save

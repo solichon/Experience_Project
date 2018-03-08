@@ -1,6 +1,6 @@
 <div class="row">
   <h3 class="text-center text-green mb-">Votre créneau  <%= link_to "#{@timeslot.activity.title}", activity_path(@timeslot.activity), class: "text-green" %> du <%= l @timeslot.start_datetime, format: :custom_long %></h3>
-  <div class="col-xs-12 col-md-12 col-md-offset-0">
+  <div>
 
        <div class="flex-container">
         <div class="h4"><span class="label label-default mr-  pull-left">Début</span><span class="h4  pull-left m0"><%= l @timeslot.start_datetime, format: :time %></span></div>
@@ -13,42 +13,44 @@
        </div>
     <br>
   </div>
-  <div class="col-xs-12 col-md-12 col-md-offset-0">
+  <div>
     <div class="panel panel-default">
-      <table class="table table-responsive w-auto table-fixed table-timeslot-show">
-        <thead>
-          <tr class="text-green h5 text-bold">
-            <td>Statut</td>
-            <td>Prénom</td>
-            <td>Nom</td>
-            <td>Téléphone</td>
-            <td>E-mail</td>
-            <td>Adultes</td>
-            <td>Enfants</td>
-            <td>Total</td>
-            <td>Source</td>
-          </tr>
-        </thead>
-        <tbody>
-        <% @timeslot.bookings.each do |booking| %>
-          <tr>
-            <td><%= t("activerecord.attributes.booking.statuses.#{booking.status}") %></td>
-            <td><%= booking.client.first_name %></td>
-            <td><%= booking.client.last_name %></td>
-            <td><%= booking.client.phone_number %></td>
-            <td><%= booking.client.email %></td>
-            <td class="text-center"><%= booking.adults %></td>
-            <td class="text-center"><%= booking.children %></td>
-            <td><%= humanized_money_with_symbol(booking.total_price) %></td>
-            <td><%= t("activerecord.attributes.booking.channel_sources.#{booking.channel_source}") %>
-          </tr>
-        </tbody>
-      <% end %>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-hover w-auto table-fixed table-timeslot-show">
+          <thead>
+            <tr class="text-green h5 text-bold">
+              <td>Statut</td>
+              <td>Prénom</td>
+              <td>Nom</td>
+              <td>Téléphone</td>
+              <td>E-mail</td>
+              <td>Adultes</td>
+              <td>Enfants</td>
+              <td>Total</td>
+              <td>Source</td>
+            </tr>
+          </thead>
+          <tbody>
+          <% @timeslot.bookings.each do |booking| %>
+            <tr>
+              <td><%= t("activerecord.attributes.booking.statuses.#{booking.status}") %></td>
+              <td><%= booking.client.first_name %></td>
+              <td><%= booking.client.last_name %></td>
+              <td><%= booking.client.phone_number %></td>
+              <td><%= booking.client.email %></td>
+              <td class="text-center"><%= booking.adults %></td>
+              <td class="text-center"><%= booking.children %></td>
+              <td><%= humanized_money_with_symbol(booking.total_price) %></td>
+              <td><%= t("activerecord.attributes.booking.channel_sources.#{booking.channel_source}") %>
+            </tr>
+          </tbody>
+        <% end %>
+        </table>
+      </div>
     </div>
 
         <br>
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
+    <div class="col-md-4 col-md-offset-4">
      <div class="row text-center">
       <%= link_to activity_path(@timeslot.activity) do %>
         <%= cl_image_tag @timeslot.activity.image, class: "picture-frame", height: 200, width: 300, crop: :fill %>

@@ -26,10 +26,12 @@
     <%= render 'shared/flashes' %>
     <% unless current_page?('/') %>
       <div class='container'>
+        <div class="col-xs-12">
     <% end %>
       <%= yield %>
     <% unless current_page?('/') %>
       </div>
+        </div>
     <% end %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

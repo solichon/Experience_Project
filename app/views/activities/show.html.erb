@@ -1,6 +1,6 @@
 <div class="row">
   <h3 class="text-center text-green activity mb">Votre activité <%= @activity.title %> en détail</h3>
-  <div class="col-xs-12 col-md-6 col-md-offset-0">
+  <div class="col-md-6">
     <ul class="list-group">
        <li class="list-group-item"> <h5 class="detail-activity"><strong><span class="glyphicon glyphicon-search"></span> <strong> Description </strong></h5><%= @activity.description %></li>
         <li class="list-group-item"><h5 class="detail-activity"><span class="glyphicon glyphicon-dashboard"></span> <strong> Durée </strong></h5><%= @activity.duration_in_minutes %> minutes</li>
@@ -10,7 +10,7 @@
         <li class="list-group-item"><h5 class="detail-activity"><strong><span class="glyphicon glyphicon-eur"></span>  Prix enfant </strong></h5><%= @activity.child_price_cents %> €</li>
     </ul>
   </div>
-  <div class="col-xs-12 col-md-4 col-md-offset-1">
+  <div class="col-md-4 col-md-offset-1">
       <div class="row text-center">
         <%= cl_image_tag @activity.image, class: "picture-frame", height: 200, width: 300, crop: :fill %>
       </div>

@@ -20,10 +20,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    par = params.require(:booking).permit(:adults, :children, :comments,
+    params.require(:booking).permit(:adults, :children, :comments,
      :status, :activity, :timeslot_id, :client_id, :channel_source)
-    par["status"] = par["status"].to_i
-    par["channel_source"] = par["channel_source"].to_i
-    par
   end
 end

@@ -19,6 +19,12 @@ h1 {
   @extend .text-green;
 }
 
+@media (max-width: 700px) {
+  h3, .h3 {
+    font-size: 23px ;
+  }
+}
+
 h5 {
   @extend .text-green;
 }

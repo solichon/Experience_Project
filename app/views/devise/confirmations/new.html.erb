@@ -1,6 +1,6 @@
 <%= render "devise/shared/wrapper" do %>
 <div class="row">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
     <h2 class="text-center"><%= t(".resend_confirmation_instructions") %></h2>
 
     <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>

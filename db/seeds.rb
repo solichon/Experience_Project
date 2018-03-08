@@ -11,14 +11,14 @@
 
 # # ------------------------- SEEDS FOR DEV ENV -------------------------
 
-# puts "Starting seed for DEV ENV"
+# # puts "Starting seed for DEV ENV"
 
-# Booking.destroy_all
-# Timeslot.destroy_all
-# Activity.destroy_all
-# Client.destroy_all
-# User.destroy_all
-# puts "DB cleaned"
+# # Booking.destroy_all
+# # Timeslot.destroy_all
+# # Activity.destroy_all
+# # Client.destroy_all
+# # User.destroy_all
+# # puts "DB cleaned"
 
 # # USERS
 
@@ -145,8 +145,8 @@ Booking.destroy_all
 Timeslot.destroy_all
 Activity.destroy_all
 Client.destroy_all
-User.destroy_all
-puts "DB cleaned"
+# User.destroy_all # deleted for prod
+puts "DB cleaned - appart from users"
 
 # USERS
 
@@ -168,12 +168,19 @@ math = User.create!(
   SIRET: "12345678901234",
   first_name: "Math",
   last_name: "Bonfils",
-  phone_number: "+33 6 11 22 33 44",
+  phone_number: "06 16 74 18 21",
   email: "math@kite-marseille.com",
   password: "password",
   website: "www.math-kite-marseille.com"
   )
 puts "done user math"
+
+morgan = Client.create!(
+  first_name: "Morgan",
+  last_name: "Di Via",
+  phone_number: "06 33 92 60 98",
+  email: "morgan.divia@lewagon.org",
+  )
 
 # ACTIVITIES
 

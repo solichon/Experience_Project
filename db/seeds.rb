@@ -11,14 +11,14 @@
 
 # # ------------------------- SEEDS FOR DEV ENV -------------------------
 
-# puts "Starting seed for DEV ENV"
+# # puts "Starting seed for DEV ENV"
 
-# Booking.destroy_all
-# Timeslot.destroy_all
-# Activity.destroy_all
-# Client.destroy_all
-# User.destroy_all
-# puts "DB cleaned"
+# # Booking.destroy_all
+# # Timeslot.destroy_all
+# # Activity.destroy_all
+# # Client.destroy_all
+# # User.destroy_all
+# # puts "DB cleaned"
 
 # # USERS
 
@@ -145,35 +145,39 @@ Booking.destroy_all
 Timeslot.destroy_all
 Activity.destroy_all
 Client.destroy_all
-User.destroy_all
-puts "DB cleaned"
+# User.destroy_all # deleted for prod
+puts "DB cleaned - appart from users"
 
-# USERS
+# # USERS # Commented because users not deleted anymore
 
-puts "Creating users seeds"
-test = User.create!(
-  company_name: "Company",
-  SIRET: "12345678901234",
-  first_name: "First",
-  last_name: "Last",
-  phone_number: "+33 6 11 22 33 44",
-  email: "user@example.com",
-  password: "password",
-  website: "www.website.com"
-  )
-puts "done user test"
+ test = User.first
+ math = User.last
 
-math = User.create!(
-  company_name: "Math Kite Marseille",
-  SIRET: "12345678901234",
-  first_name: "Math",
-  last_name: "Bonfils",
-  phone_number: "+33 6 11 22 33 44",
-  email: "math@kite-marseille.com",
-  password: "password",
-  website: "www.math-kite-marseille.com"
-  )
-puts "done user math"
+# puts "Creating users seeds"
+# test = User.create!(
+#   company_name: "Company",
+#   SIRET: "12345678901234",
+#   first_name: "First",
+#   last_name: "Last",
+#   phone_number: "+33 6 11 22 33 44",
+#   email: "user@example.com",
+#   password: "password",
+#   website: "www.website.com"
+#   )
+# puts "done user test"
+
+# math = User.create!(
+#   company_name: "Math Kite Marseille",
+#   SIRET: "12345678901234",
+#   first_name: "Math",
+#   last_name: "Bonfils",
+#   phone_number: "06 16 74 18 21",
+#   email: "math@kite-marseille.com",
+#   password: "password",
+#   website: "www.math-kite-marseille.com"
+#   )
+# puts "done user math"
+
 
 # ACTIVITIES
 
@@ -875,6 +879,64 @@ puts "Creating timeslots seeds for cours_particuliers"
           end
       end
   end
+
+# SEED CLIENT MORGAN
+
+morgan = Client.create!(
+  first_name: "Morgan",
+  last_name: "Di Via",
+  phone_number: "06 33 92 60 98",
+  email: "morgan.divia@lewagon.org",
+  )
+start_datetime = Time.new(2018, 02, 26, 10, 00)
+timeslot_init = Timeslot.create!(
+  start_datetime:start_datetime,
+  end_datetime: start_datetime + initiation.duration_in_minutes * 60,
+  activity: initiation,
+  status: "empty"
+  )
+booking = Booking.create!(
+  client: morgan,
+  timeslot: timeslot_init,
+  adults: 1,
+  children: 0,
+  comments: "Au top !",
+  total_price: 90,
+  channel_source: (0..5).to_a.sample.to_i,
+  status: (0..2).to_a.sample.to_i
+  )
+timeslot_perf = Timeslot.create!(
+  start_datetime:start_datetime,
+  end_datetime: start_datetime + initiation.duration_in_minutes * 60,
+  activity: perfectionnement,
+  status: "empty"
+  )
+booking = Booking.create!(
+  client: morgan,
+  timeslot: timeslot_perf,
+  adults: 1,
+  children: 0,
+  comments: "Au top !",
+  total_price: 90,
+  channel_source: (0..5).to_a.sample.to_i,
+  status: (0..2).to_a.sample.to_i
+  )
+timeslot_cp = Timeslot.create!(
+  start_datetime:start_datetime,
+  end_datetime: start_datetime + initiation.duration_in_minutes * 60,
+  activity: cours_particuliers,
+  status: "empty"
+  )
+booking = Booking.create!(
+  client: morgan,
+  timeslot: timeslot_cp,
+  adults: 1,
+  children: 0,
+  comments: "Au top !",
+  total_price: 120,
+  channel_source: (0..5).to_a.sample.to_i,
+  status: (0..2).to_a.sample.to_i
+  )
 
 puts "#{User.count} users seeded"
 puts "First user id: #{User.first.id}"

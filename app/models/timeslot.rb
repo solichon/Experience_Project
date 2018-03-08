@@ -49,19 +49,19 @@ class Timeslot < ApplicationRecord
     if total_participants == activity.capacity
       "Complet" #self.status = "complete"
     elsif total_participants >= 0.7*activity.capacity
-      "👤 #{total_participants}/#{activity.capacity}"
+      "👪 #{total_participants}/#{activity.capacity}"
     else
-      "👤 #{total_participants}/#{activity.capacity}"
+      "👪 #{total_participants}/#{activity.capacity}"
     end
   end
 
   def capacity_for_calendar
     if total_participants == activity.capacity
-      "<span style='color:#00DCB1;'>🧔🏻#{total_adults} / 👦🏻#{total_children} </span>"
+      "<span style='color:#00DCB1;'>🧔🏻 #{total_adults} - 👶🏻 #{total_children} </span>"
     elsif total_participants >= 0.7*activity.capacity
-      "<span style='color:#FFAA64;'>🧔🏻#{total_adults} / 👦🏻#{total_children}</span>"
+      "<span style='color:#FFAA64;'>🧔🏻 #{total_adults} - 👶🏻 #{total_children}</span>"
     else
-      "<span style='color:#FF6F59;'>🧔🏻#{total_adults} / 👦🏻#{total_children}</span>"
+      "<span style='color:#FF6F59;'>🧔🏻 #{total_adults} - 👶🏻 #{total_children}</span>"
     end
   end
 end

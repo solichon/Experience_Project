@@ -13,7 +13,7 @@ class Booking < ApplicationRecord
 
   validates :total_pax, numericality: { greater_than_or_equal_to: 1 }
   validates :adults, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  validates :children, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :children, presence: false, numericality: { greater_than_or_equal_to: 0 }
   validates :total_price, presence: true, numericality: true
   validates :status, presence: true
   validates :channel_source, presence: true

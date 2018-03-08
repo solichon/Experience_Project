@@ -1,10 +1,10 @@
 
-.calendar {
-  margin-top: 0px;
-  @media screen and (min-width: 700px) {
-    margin-top: 40px;
-  }
-}
+// .calendar {
+//   margin-top: 0px;
+//   @media screen and (min-width: 700px) {
+//     margin-top: 40px;
+//   }
+// }
 
 .popover-content a {
   display: block;
@@ -12,6 +12,7 @@
   color: $gray;
   font-weight: 700;
 }
+
 
 .fc-event {
     font-size: .85em;
@@ -61,6 +62,14 @@
 
 .fc-icon-fa {
   font-family: FontAwesome;
+}
+
+.fc-axis {
+  color: $gray;
+}
+
+.fc-day-header {
+  color: $gray;
 }
 
 // .fc-center {

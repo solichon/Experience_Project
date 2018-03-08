@@ -18,11 +18,11 @@ $(document).ready(function() {
 
   $('#calendar').fullCalendar({
     locale:"fr-fr",
-    defaultView: 'agendaWeek',
+    defaultView: window.innerWidth > 700 ? 'agendaWeek' : 'agendaDay',
     themeSystem: 'bootstrap3',
     header: {
-      left: 'prev,next,addPrint',
-      center: 'title',
+      left: window.innerWidth > 700 ? 'prev,next,addPrint' : 'prev,next',
+      center: window.innerWidth > 700 ? 'title' : '',
       right: 'month,agendaWeek,agendaDay,'
     },
     footer: {
@@ -30,6 +30,7 @@ $(document).ready(function() {
       weekNumbers: true,
       eventLimit: true, // allow "more" link when too many events
     },
+    height: 100,
     contentHeight: 532,  //size height
     aspectRatio: 1, //ration height vs. width (don't work)
     minTime: '09:00:00',
@@ -62,7 +63,7 @@ $(document).ready(function() {
         container: 'body'
       })
     },
-    events: '/timeslots',
+    events: window.innerWidth > 700 ? '/timeslots' : '/timeslots?xs=true',
     eventBackgroundColor: '#FFFFFF'
 
   })

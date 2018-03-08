@@ -17,6 +17,10 @@ fr:
         comments: 'Commentaires'
         status: 'Etat de Réservation'
         channel_source: 'Source'
+      timeslot:
+        activity: 'Activité'
+        start_datetime: 'Date de Début'
+
 
     # placeholders:
     #   user:

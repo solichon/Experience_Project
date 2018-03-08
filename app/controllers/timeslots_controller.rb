@@ -1,6 +1,7 @@
 class TimeslotsController < ApplicationController
   def index
     @timeslots = Timeslot.all
+    @is_xs = params["xs"]
     respond_to do |format|
       format.html
       format.json

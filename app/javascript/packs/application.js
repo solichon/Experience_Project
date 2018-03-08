@@ -22,7 +22,6 @@ $(document).ready(function() {
     themeSystem: 'bootstrap3',
     header: {
       left: window.innerWidth > 700 ? 'prev,next,addPrint' : 'prev,next',
-      center: window.innerWidth > 700 ? 'title' : '',
       right: 'month,agendaWeek,agendaDay,'
     },
     footer: {
@@ -31,7 +30,7 @@ $(document).ready(function() {
       eventLimit: true, // allow "more" link when too many events
     },
     height: 100,
-    contentHeight: 532,  //size height
+    contentHeight: 520,  //size height
     aspectRatio: 1, //ration height vs. width (don't work)
     minTime: '09:00:00',
     maxTime: '18:00:00',
@@ -57,15 +56,14 @@ $(document).ready(function() {
       $el.popover({
         html: true,
         title: eventObj.capacity,
-        content: `<a href="/timeslots/${eventObj.id}/bookings/new">Ajouter Réservation</a><a href="/timeslots/${eventObj.id}">Détails</a>` ,
+        content: `<a href="/timeslots/${eventObj.id}/bookings/new">Ajouter Réservation</a><a href="/timeslots/${eventObj.title}">Détails </a>`,
         trigger: 'click',
         placement: 'top',
         container: 'body'
       })
     },
     events: window.innerWidth > 700 ? '/timeslots' : '/timeslots?xs=true',
-    eventBackgroundColor: '#FFFFFF'
-
+    eventBackgroundColor: '#FFFFFF',
   })
 });
 

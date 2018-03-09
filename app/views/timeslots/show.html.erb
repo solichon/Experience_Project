@@ -3,20 +3,33 @@
   <div>
 
   <div class="flex-container">
+
     <div class="h4">
-        <span class="label label-default mr- pull-left">Début</span><span class="h4  pull-left m0"><%= l @timeslot.start_datetime, format: :time %></span>
+        <span>
+          <a id="button-print" class="glyphicon glyphicon-print pull-left ml-- mr hidden-xs"></a>
+        </span>
+        <span class="label label-default mr- pull-left">
+          Début
+        </span>
+        <span class="pull-left m0">
+          <%= l @timeslot.start_datetime, format: :time %>
+        </span>
+        <span class="label label-default mr- ml pull-left">
+          Fin
+        </span>
+        <span class="pull-left m0">
+          <%= l @timeslot.end_datetime, format: :time %>
+        </span>
     </div>
 
     <div class="h4">
-        <span class="label label-default mr- pull-left">Fin</span><span class="h4  pull-left m0"><%= l @timeslot.end_datetime, format: :time %></span>
-    </div>
-
-    <div class="h4">
-        <span class="label label-default mr- pull-left">Réservations</span><span class="h4 pull-left m0"><%= @timeslot.total_participants %> / <%= @timeslot.activity.capacity %></span>
-    </div>
-
-    <div class="h4">
-        <span class="label label-danger pull-left">
+        <span class="label label-default mr- ml pull-left">
+          Réservations
+        </span>
+        <span class="pull-left m0">
+          <%= @timeslot.total_participants %> / <%= @timeslot.activity.capacity %>
+        </span>
+        <span class="label label-danger mr-- ml pull-left">
           <%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %>
         </span>
     </div>

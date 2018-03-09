@@ -59,7 +59,7 @@ class Timeslot < ApplicationRecord
     if total_participants == activity.capacity
       "<span style='color:#00DCB1;'>🧔🏻 #{total_adults} - 👶🏻 #{total_children} </span>"
     elsif total_participants >= 0.7*activity.capacity
-      "<span style='color:#FFAA64;'>🧔🏻 #{total_adults} - 👶🏻 #{total_children}</span>"
+      "<span style='color:#DDB900;'>🧔🏻 #{total_adults} - 👶🏻 #{total_children}</span>"
     else
       "<span style='color:#FF6F59;'>🧔🏻 #{total_adults} - 👶🏻 #{total_children}</span>"
     end

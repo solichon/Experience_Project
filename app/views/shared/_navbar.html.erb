@@ -1,6 +1,6 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand hidden-xs hidden-sm ml- ml" do %>
+  <%= link_to root_path, class: "navbar-wagon-brand hidden-xs hidden-sm" do %>
     <%= image_tag "logo_gege.png" %>
   <% end %>
 
@@ -45,7 +45,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "btn-third navbar-wagon-item navbar-wagon-link " %>
+      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "btn-third navbar-wagon-item navbar-wagon-link mr+" %>
     <% end %>
   </div>
 

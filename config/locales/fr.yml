@@ -210,7 +210,7 @@ fr:
       default: "%d %B %Y %Hh %Mmin %Ss"
       long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
-      custom: "%a %d %b"
+      custom: "%d %B"
       custom_long: "%A %d %B"
       time: "%H:%M"
     pm: pm

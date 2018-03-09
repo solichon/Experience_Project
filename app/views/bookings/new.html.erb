@@ -53,8 +53,8 @@
       </div>
       <div class="col-xs-12">
         <%= f.input :comments %>
-        <%= f.input :status, collection: booking_status_collection, selected: booking_status_collection.first %>
-        <%= f.input :channel_source, collection: channel_sources_collection, selected: channel_sources_collection.first  %>
+        <%= f.input :status, input_html: {value: :booked}, as: :hidden %>
+        <%= f.input :channel_source, input_html: {value: :direct}, as: :hidden  %>
         <%= f.submit "Valider", class: "btn btn-primary" %>
       </div>
       <% end %>

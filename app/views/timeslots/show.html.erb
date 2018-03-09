@@ -1,26 +1,53 @@
 <div class="row">
-  <h3 class="text-center text-green mb-">Votre créneau  <%= link_to "#{@timeslot.activity.title}", activity_path(@timeslot.activity), class: "text-green" %> du <%= l @timeslot.start_datetime, format: :custom_long %></h3>
-  <div>
 
-  <div class="flex-container">
-    <div class="h4">
-        <span class="label label-default mr- pull-left">Début</span><span class="h4  pull-left m0"><%= l @timeslot.start_datetime, format: :time %></span>
-    </div>
-
-    <div class="h4">
-        <span class="label label-default mr- pull-left">Fin</span><span class="h4  pull-left m0"><%= l @timeslot.end_datetime, format: :time %></span>
-    </div>
-
-    <div class="h4">
-        <span class="label label-default mr- pull-left">Réservations</span><span class="h4 pull-left m0"><%= @timeslot.total_participants %> / <%= @timeslot.activity.capacity %></span>
-    </div>
-
-    <div class="h4">
-        <span class="label label-danger pull-left">
-          <%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %>
-        </span>
-    </div>
+<!-- Mobie view -->
+  <div class="hidden-md hidden-lg">
+  <h3 class="text-center text-green mb0">
+    Votre créneau  <%= link_to "#{@timeslot.activity.title}", activity_path(@timeslot.activity), class: "text-green" %>
+  </h3>
+  <h3 class="text-center text-green mt0">
+    du <%= l @timeslot.start_datetime, format: :custom_long %>
+  </h3>
   </div>
+
+<!-- Laptop view -->
+  <div class="hidden-xs hidden-sm">
+  <h3 class="text-center text-green mb-">Votre créneau  <%= link_to "#{@timeslot.activity.title}", activity_path(@timeslot.activity), class: "text-green" %> du <%= l @timeslot.start_datetime, format: :custom_long %></h3>
+  </div>
+
+  <div>
+    <div class="flex-container">
+
+      <div class="h4">
+          <span>
+            <a id="button-print" class="glyphicon glyphicon-print pull-left ml-- mr hidden-xs"></a>
+          </span>
+          <span class="label label-default mr- pull-left">
+            Début
+          </span>
+          <span class="pull-left m0">
+            <%= l @timeslot.start_datetime, format: :time %>
+          </span>
+          <span class="label label-default mr- ml pull-left">
+            Fin
+          </span>
+          <span class="pull-left m0">
+            <%= l @timeslot.end_datetime, format: :time %>
+          </span>
+      </div>
+
+      <div class="h4">
+          <span class="label label-default mr- ml pull-left">
+            Réservations
+          </span>
+          <span class="pull-left m0">
+            <%= @timeslot.total_participants %> / <%= @timeslot.activity.capacity %>
+          </span>
+          <span class="label label-danger mr-- ml pull-left">
+            <%= t("activerecord.attributes.timeslot.statuses.#{@timeslot.status}") %>
+          </span>
+      </div>
+    </div>
     <br>
   </div>
   <div>

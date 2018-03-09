@@ -5,11 +5,11 @@ json.array! @timeslots do |timeslot|
   json.start timeslot.start_datetime
   json.end timeslot.end_datetime
   color = if timeslot.total_participants == timeslot.activity.capacity
-    '#00DCB1' # vert
+    '#00DCB1' # green gégé
   elsif timeslot.total_participants >= 0.7*timeslot.activity.capacity
     '#DDB900' # yellow
   else
-    '#FF6F59' # rouge
+    '#FF6F59' # red gégé
   end
   # json.backgroundColor color
   json.borderColor color

@@ -51,6 +51,16 @@
     text-decoration: underline
 }
 
+#button-print {
+    @extend .text-gray;
+    cursor: pointer;
+}
+
+#button-print:hover {
+    @extend .text-gray;
+    text-decoration: none
+}
+
 .checkbox-toggle-wrap {
     width: 60px;
 }

@@ -471,7 +471,7 @@ puts "Creating timeslots seeds for initiation"
               children: children,
               comments: Faker::Simpsons.quote,
               total_price: total_price,
-              channel_source: 2,
+              channel_source: 3,
               status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds 1"
@@ -495,7 +495,7 @@ puts "Creating timeslots seeds for initiation"
               children: children,
               comments: Faker::Simpsons.quote,
               total_price: total_price,
-              channel_source: 3,
+              channel_source: 2,
               status: (0..2).to_a.sample.to_i
               )
           puts "done bookings seeds 2"

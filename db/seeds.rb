@@ -231,7 +231,7 @@ puts "done activity seeds"
 #--------------------------
 
 puts "Creating timeslots seeds for initiation"
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 02, 26, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -274,7 +274,7 @@ puts "Creating timeslots seeds for initiation"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 02, 27, 10, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -316,7 +316,7 @@ puts "Creating timeslots seeds for initiation"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 02, 28, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -358,7 +358,7 @@ puts "Creating timeslots seeds for initiation"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 03, 01, 10, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -400,7 +400,7 @@ puts "Creating timeslots seeds for initiation"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 03, 02, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -442,7 +442,7 @@ puts "Creating timeslots seeds for initiation"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 03, 03, 10, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -451,24 +451,19 @@ puts "Creating timeslots seeds for initiation"
       status: "empty"
       )
     puts "done timeslot seed #{timeslot.activity.title} #{j + 1}"
-      2.times do |k|
         client = Client.create!(
             first_name: Faker::Name.first_name,
             last_name: Faker::Name.last_name,
-            phone_number: "06 #{49 * (k+1)} #{37 * (k+1)} #{41 * (k+1)} #{28 * (k+1)}",
+            phone_number: "06 49 37 41 28",
             email: Faker::Internet.email,
           )
-          puts "done clients seeds #{k + 1}"
+          puts "done clients seeds 1"
         puts "Creating booking seeds"
-          adults = (0..1).to_a.sample.to_i
-          children = (0..1).to_a.sample.to_i
-          if (adults + children) == 0
-            adults = 1
-          end
+          adults = 1
+          children = 0
           adults_price = adults * cours_particuliers.adult_price
           children_price = children * cours_particuliers.child_price
           total_price = adults_price + children_price
-          1.times do |l|
             booking = Booking.create!(
               client: client,
               timeslot: timeslot,
@@ -476,18 +471,40 @@ puts "Creating timeslots seeds for initiation"
               children: children,
               comments: Faker::Simpsons.quote,
               total_price: total_price,
-              channel_source: (0..5).to_a.sample.to_i,
+              channel_source: 3,
               status: (0..2).to_a.sample.to_i
               )
-          puts "done bookings seeds #{l + 1}"
-          end
-      end
+          puts "done bookings seeds 1"
+        client = Client.create!(
+            first_name: Faker::Name.first_name,
+            last_name: Faker::Name.last_name,
+            phone_number: "06 27 44 19 20",
+            email: Faker::Internet.email,
+          )
+          puts "done clients seeds 2"
+        puts "Creating booking seeds"
+          adults = 0
+          children = 1
+          adults_price = adults * cours_particuliers.adult_price
+          children_price = children * cours_particuliers.child_price
+          total_price = adults_price + children_price
+            booking = Booking.create!(
+              client: client,
+              timeslot: timeslot,
+              adults: adults,
+              children: children,
+              comments: Faker::Simpsons.quote,
+              total_price: total_price,
+              channel_source: 1,
+              status: (0..2).to_a.sample.to_i
+              )
+          puts "done bookings seeds 2"
   end
 
 #--------------------------
 
 puts "Creating timeslots seeds for perfectionnement.title"
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 02, 27, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -526,7 +543,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 02, 28, 10, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -565,7 +582,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 03, 01, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -604,7 +621,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 03, 02, 10, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -643,7 +660,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 03, 03, 14, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -685,7 +702,7 @@ puts "Creating timeslots seeds for perfectionnement.title"
 #--------------------------
 
 puts "Creating timeslots seeds for cours_particuliers"
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 02, 27, 16, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -724,7 +741,7 @@ puts "Creating timeslots seeds for cours_particuliers"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 02, 28, 12, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -763,7 +780,7 @@ puts "Creating timeslots seeds for cours_particuliers"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 03, 01, 16, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -802,7 +819,7 @@ puts "Creating timeslots seeds for cours_particuliers"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 03, 02, 12, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
@@ -841,7 +858,7 @@ puts "Creating timeslots seeds for cours_particuliers"
       end
   end
 
-  40.times do |j|
+  10.times do |j|
     start_datetime = Time.new(2018, 03, 03, 16, 00) + j * 7 * 24 * 60 * 60
     timeslot = Timeslot.create!(
       start_datetime:start_datetime,
